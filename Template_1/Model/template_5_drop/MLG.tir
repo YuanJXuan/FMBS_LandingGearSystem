@@ -1,0 +1,58 @@
+$---------------------------------------------------------------------MDI_HEADER
+[MDI_HEADER]
+ FILE_TYPE     =  'tir'
+ FILE_VERSION  =  2.0
+ FILE_FORMAT   =  'ASCII'
+(COMMENTS)
+{comment_string}
+'Tire      - XXXXXX'
+'Pressure  - XXXXXX'
+'Test Date - XXXXXX'
+'Test tire'
+'New File Format v2.1'
+$--------------------------------------------------------------------------units
+[UNITS]
+ LENGTH              = 'meter'
+ FORCE               = 'newton'
+ ANGLE               = 'radian'
+ MASS                = 'kg'
+ TIME                = 'sec'
+$--------------------------------------------------------------------------model
+[MODEL]
+!       use mode               1       2       3       
+!       ------------------------------------------
+!       relaxation lengths             X         
+!       smoothing                              X  
+!
+ PROPERTY_FILE_FORMAT    = 'UATIRE'
+ USE_MODE                = 2
+! 3D contact can be switched on by deleting the comment ! character
+! When no further coefficients are specified, default values will be taken
+!CONTACT_MODEL            = '3D_ENVELOPING'
+$----------------------------------------------------------------------dimension
+[DIMENSION]
+ UNLOADED_RADIUS         = 0.457
+ WIDTH                   = 0.3048
+ ASPECT_RATIO            = 0.8
+$----------------------------------------------------------------------parameter
+[PARAMETER]
+ VERTICAL_STIFFNESS      = 40597335.3
+ VERTICAL_DAMPING        =     50000
+ ROLLING_RESISTANCE      =      0.003
+ CSLIP                   =  80000
+ CALPHA                  =  60000
+ CGAMMA                  =   3000
+ UMIN                    =      0.8
+ UMAX                    =      1.1
+ REL_LEN_LON             =      0.6
+ REL_LEN_LAT             =      0.5
+$--------------------------------------------------------------------------shape
+[SHAPE]
+{radial width}
+ 1.0    0.0
+ 1.0    0.2
+ 1.0    0.4
+ 1.0    0.6
+ 1.0    0.8
+ 0.9    1.0
+

@@ -1,0 +1,215 @@
+import Jusme
+from FmbsShortcut.SCcmd.utils import VecUtils 
+import AbstractHps
+import Common
+
+class BrakeHplLtaLcAtch1Adjust(AbstractHps.AbstractHpsAdjust)  :
+    def __init__(self, hps_full_name) -> None:
+        super().__init__(hps_full_name)
+        pass
+
+    def Adjust(self):
+        print("开始调整硬点hpl_lta_lc_atch_1")
+        ascene = Jusme.ActiveUSScene
+        model_name = Common.getModelName()
+
+
+        #-----------获取hpl_lta_lc_atch_1
+        hpl_lta_lc_atch_1 = ascene.getObject(self.hps_full_name)
+        if not hpl_lta_lc_atch_1 :
+            print("未找到hpl_lta_lc_atch_1")
+            return
+        
+
+        #---------获取hpl_lta_connect_atch_1(hps)
+        hpl_lta_connect_atch_1 = ascene.getObject(".{}.ground.hpl_lta_connect_atch_1".format(model_name))
+        if not hpl_lta_connect_atch_1 :
+            print("未找到2")
+            return
+        
+
+        #---------获取hpl_uta_connect_atch_1(hps)
+        hpl_uta_connect_atch_1 = ascene.getObject(".{}.ground.hpl_uta_connect_atch_1".format(model_name))
+        if not hpl_uta_connect_atch_1 :
+            print("未找到3")
+            return
+        
+        #---------获取hpl_uta_connect_atch_2(hps)
+        hpl_uta_connect_atch_2 = ascene.getObject(".{}.ground.hpl_uta_connect_atch_2".format(model_name))
+        if not hpl_uta_connect_atch_2 :
+            print("未找到3")
+            return
+
+        #---------------获取全局坐标系原点的mark点
+        origo = ascene.getObject(".{}.ground.origo".format(model_name))
+        if not origo :
+            print("未找到4")
+            return
+        
+        #---------获取gel_lower_cylinder(part)
+        gel_lower_cylinder = ascene.getObject(".{}.gel_lower_cylinder".format(model_name))
+        if not gel_lower_cylinder :
+            print("未找到5")
+            return
+
+        #---------获取gel_lower_torquearm(part)
+        gel_lower_torquearm = ascene.getObject(".{}.gel_lower_torquearm".format(model_name))
+        if not gel_lower_torquearm :
+            print("未找到6")
+            return
+
+        #---------修改gel_lower_cylinder.jxl_joint_j_11(marker)
+        jxl_joint_j_11 = ascene.getObject(".{}.gel_lower_cylinder.jxl_joint_j_11".format(model_name))
+        if not jxl_joint_j_11 :
+            print("未找到7")
+            return
+        jxl_joint_j_11.location=(VecUtils.LOC_RELATIVE_TO([0,0,0],hpl_lta_lc_atch_1))
+        jxl_joint_j_11.orientation=(VecUtils.ORI_ALONG_AXIS(hpl_lta_connect_atch_1.location,hpl_uta_connect_atch_1.location,'z'))
+        loc_ori=VecUtils.global2local(gel_lower_cylinder.location,gel_lower_cylinder.orientation,jxl_joint_j_11.location,jxl_joint_j_11.orientation)
+        jxl_joint_j_11.location=(loc_ori[0][0],loc_ori[0][1],loc_ori[0][2])
+        jxl_joint_j_11.orientation=(loc_ori[1][0],loc_ori[1][1],loc_ori[1][2])
+
+        
+
+        #---------修改gel_lower_torquearm(part)的相关内容-----------
+        gel_lower_torquearm.location=0.5*(hpl_lta_lc_atch_1.location+hpl_lta_connect_atch_1.location)
+        gel_lower_torquearm.orientation=(VecUtils.ORI_ALONG_AXIS(hpl_lta_lc_atch_1.location,hpl_lta_connect_atch_1.location,'z'))
+
+
+        #---------修改gel_lower_torquearm.gralin_29(marker)
+        gralin_29 = ascene.getObject(".{}.gel_lower_torquearm.gralin_29".format(model_name))
+        if not gralin_29 :
+            print("未找到9")
+            return
+        gralin_29.location=(VecUtils.LOC_RELATIVE_TO([0,0,0],hpl_lta_lc_atch_1))
+        gralin_29.orientation=(VecUtils.ORI_ALONG_AXIS(hpl_lta_lc_atch_1.location,hpl_lta_connect_atch_1.location,'z'))
+        loc_ori=VecUtils.global2local(gel_lower_torquearm.location,gel_lower_torquearm.orientation,gralin_29.location,gralin_29.orientation)
+        gralin_29.location=(loc_ori[0][0],loc_ori[0][1],loc_ori[0][2])
+        gralin_29.orientation=(loc_ori[1][0],loc_ori[1][1],loc_ori[1][2])
+
+        #---------修改gel_lower_torquearm.gralin_lower_torquearm(geom)
+        gralin_lower_torquearm = ascene.getObject(".{}.gel_lower_torquearm.gralin_lower_torquearm".format(model_name))
+        if not gralin_lower_torquearm :
+            print("未找到10")
+            return
+        gralin_lower_torquearm.length=(VecUtils.DM(hpl_lta_lc_atch_1.location,hpl_lta_connect_atch_1.location))
+
+        #---------修改gel_lower_torquearm.cm(marker)
+        gel_lower_torquearm_cm = ascene.getObject(".{}.gel_lower_torquearm.cm".format(model_name))
+        if not gel_lower_torquearm_cm :
+            print("未找到11")
+            return
+        gel_lower_torquearm_cm.location=gel_lower_torquearm.location
+        gel_lower_torquearm_cm.orientation=gel_lower_torquearm.orientation
+        loc_ori=VecUtils.global2local(gel_lower_torquearm.location,gel_lower_torquearm.orientation,gel_lower_torquearm_cm.location,gel_lower_torquearm_cm.orientation)
+        gel_lower_torquearm_cm.location=(loc_ori[0][0],loc_ori[0][1],loc_ori[0][2])
+        gel_lower_torquearm_cm.orientation=(loc_ori[1][0],loc_ori[1][1],loc_ori[1][2])
+
+        #---------修改gel_lower_torquearm.inertia_frame(marker)
+        inertia_frame = ascene.getObject(".{}.gel_lower_torquearm.inertia_frame".format(model_name))
+        if not inertia_frame :
+            print("未找到12")
+            return
+        inertia_frame.location=(VecUtils.LOC_RELATIVE_TO([0,0,0],gel_lower_torquearm_cm))
+        inertia_frame.orientation=(VecUtils.ORI_RELATIVE_TO([0,0,0],gel_lower_torquearm))
+        loc_ori=VecUtils.global2local(gel_lower_torquearm.location,gel_lower_torquearm.orientation,inertia_frame.location,inertia_frame.orientation)
+        inertia_frame.location=(loc_ori[0][0],loc_ori[0][1],loc_ori[0][2])
+        inertia_frame.orientation=(loc_ori[1][0],loc_ori[1][1],loc_ori[1][2])
+
+        #---------修改gel_lower_torquearm.jxl_joint_i_11(marker)
+        jxl_joint_i_11 = ascene.getObject(".{}.gel_lower_torquearm.jxl_joint_i_11".format(model_name))
+        if not jxl_joint_i_11 :
+            print("未找到8")
+            return
+        jxl_joint_i_11.location=(VecUtils.LOC_RELATIVE_TO([0,0,0],jxl_joint_j_11))
+        jxl_joint_i_11.orientation=(VecUtils.ORI_RELATIVE_TO([0,0,0],jxl_joint_j_11))
+        loc_ori=VecUtils.global2local(gel_lower_torquearm.location,gel_lower_torquearm.orientation,jxl_joint_i_11.location,jxl_joint_i_11.orientation)
+        jxl_joint_i_11.location=(loc_ori[0][0],loc_ori[0][1],loc_ori[0][2])
+        jxl_joint_i_11.orientation=(loc_ori[1][0],loc_ori[1][1],loc_ori[1][2])
+
+        #---------修改gel_connector的相关内容--------------
+        gel_connector = ascene.getObject(".{}.gel_connector".format(model_name))
+        if not gel_connector :
+            print("未找到8")
+            return
+        
+        #---------修改gel_connector.jxl_joint_j_1
+        jxl_joint_j_1 = ascene.getObject(".{}.gel_connector.jxl_joint_j_1".format(model_name))
+        if not jxl_joint_j_1 :
+            print("未找到8")
+            return
+        jxl_joint_j_1.location=(VecUtils.LOC_RELATIVE_TO([0,0,0],hpl_lta_connect_atch_1))
+        jxl_joint_j_1.orientation=(VecUtils.ORI_ALONG_AXIS(hpl_lta_connect_atch_1.location,hpl_uta_connect_atch_1.location,'z'))
+        loc_ori=VecUtils.global2local(gel_connector.location,gel_connector.orientation,jxl_joint_j_1.location,jxl_joint_j_1.orientation)
+        jxl_joint_j_1.location=(loc_ori[0][0],loc_ori[0][1],loc_ori[0][2])
+        jxl_joint_j_1.orientation=(loc_ori[1][0],loc_ori[1][1],loc_ori[1][2])
+
+        #---------修改gel_lower_torquearm.jxl_joint_i_1
+        jxl_joint_i_1 = ascene.getObject(".{}.gel_lower_torquearm.jxl_joint_i_1".format(model_name))
+        if not jxl_joint_i_1 :
+            print("未找到8")
+            return
+        jxl_joint_i_1.location=(VecUtils.LOC_RELATIVE_TO([0,0,0],jxl_joint_j_1))
+        jxl_joint_i_1.orientation=(VecUtils.ORI_RELATIVE_TO([0,0,0],jxl_joint_j_1))
+        loc_ori=VecUtils.global2local(gel_lower_torquearm.location,gel_lower_torquearm.orientation,jxl_joint_i_1.location,jxl_joint_i_1.orientation)
+        jxl_joint_i_1.location=(loc_ori[0][0],loc_ori[0][1],loc_ori[0][2])
+        jxl_joint_i_1.orientation=(loc_ori[1][0],loc_ori[1][1],loc_ori[1][2])
+
+        #---------获取gel_upper_torquearm
+        gel_upper_torquearm = ascene.getObject(".{}.gel_upper_torquearm".format(model_name))
+        if not gel_upper_torquearm :
+            print("未找到6")
+            return
+
+        #------修改gel_connector.jxl_joint_j_2
+        jxl_joint_j_2 = ascene.getObject(".{}.gel_connector.jxl_joint_j_2".format(model_name))
+        if not jxl_joint_j_2 :
+            print("未找到7")
+            return
+        jxl_joint_j_2.location=(VecUtils.LOC_RELATIVE_TO([0,0,0],hpl_uta_connect_atch_1))
+        jxl_joint_j_2.orientation=(VecUtils.ORI_ALONG_AXIS(hpl_uta_connect_atch_1.location,hpl_uta_connect_atch_2.location,'z'))
+        loc_ori=VecUtils.global2local(gel_connector.location,gel_connector.orientation,jxl_joint_j_2.location,jxl_joint_j_2.orientation)
+        jxl_joint_j_2.location=(loc_ori[0][0],loc_ori[0][1],loc_ori[0][2])
+        jxl_joint_j_2.orientation=(loc_ori[1][0],loc_ori[1][1],loc_ori[1][2])
+
+        #------修改gel_upper_torquearm.jxl_joint_i_2
+        jxl_joint_i_2 = ascene.getObject(".{}.gel_upper_torquearm.jxl_joint_i_2".format(model_name))
+        if not jxl_joint_i_2 :
+            print("未找到7")
+            return
+        jxl_joint_i_2.location=(VecUtils.LOC_RELATIVE_TO([0,0,0],jxl_joint_j_2))
+        jxl_joint_i_2.orientation=(VecUtils.ORI_RELATIVE_TO([0,0,0],jxl_joint_j_2))
+        loc_ori=VecUtils.global2local(gel_upper_torquearm.location,gel_upper_torquearm.orientation,jxl_joint_i_2.location,jxl_joint_i_2.orientation)
+        jxl_joint_i_2.location=(loc_ori[0][0],loc_ori[0][1],loc_ori[0][2])
+        jxl_joint_i_2.orientation=(loc_ori[1][0],loc_ori[1][1],loc_ori[1][2])
+
+        #------------ground.JOINT_33
+        JOINT_33 = ascene.getObject(".{}.JOINT_33".format(model_name))
+        if not JOINT_33 :
+            print("未找到13")
+            return
+        JOINT_33.recompute()
+
+        #------------ground.jolcyl_lta_connect
+        jolcyl_lta_connect = ascene.getObject(".{}.jolcyl_lta_connect".format(model_name))
+        if not jolcyl_lta_connect :
+            print("未找到14")
+            return
+        jolcyl_lta_connect.recompute()
+
+        #------------ground.jolcyl_lc_uc_joint
+        jolcyl_lc_uc_joint = ascene.getObject(".{}.jolcyl_lc_uc_joint".format(model_name))
+        if not jolcyl_lc_uc_joint :
+            print("未找到15")
+            return
+        jolcyl_lc_uc_joint.recompute()
+
+        #------------ground.jolrev_lta_lc_joint
+        jolrev_lta_lc_joint = ascene.getObject(".{}.jolrev_lta_lc_joint".format(model_name))
+        if not jolrev_lta_lc_joint :
+            print("未找到16")
+            return
+        jolrev_lta_lc_joint.recompute()
+
+        print("调整hpl_lta_lc_atch_1结束")
+        pass

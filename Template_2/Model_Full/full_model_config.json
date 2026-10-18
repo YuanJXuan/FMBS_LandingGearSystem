@@ -1,0 +1,70 @@
+{
+  "output_model_name": "template_full_generated",
+  "combinations": [
+    {
+      "combination_name": "前起 nlg + 主起 mlg",
+      "base_adm": "../Model/template_full_drop/template_full_drop.adm",
+      "resource_dir": "../Model/template_full_drop",
+      "marker_followers": [
+    {
+      "marker_id": 1125,
+      "follows": "nlg",
+      "description": "主起机身上连接前起质量体的固定副Marker"
+    },
+    {
+      "marker_id": 1155,
+      "follows": "mlg",
+      "description": "路面零件上连接主起机身的移动副Marker"
+    }
+  ],
+  "joint_checks": [1023, 1027],
+  "assemblies": {
+    "nlg": {
+      "label": "前起",
+      "source_adm": "nlg.adm",
+      "anchor_marker_id": 85,
+      "anchor_path": "qianqizhiliang.MARKER_85",
+      "part_names": [
+        "zhuanzhou",
+        "lunzhou",
+        "taotong",
+        "shangniulibi",
+        "xianiulibi",
+        "qianqizhiliang",
+        "waitong",
+        "huosaigan",
+        "shoufangwaitong",
+        "shoufanghuosaigan",
+        "chengganwaitong",
+        "chengganhuosaigan",
+        "lt_1.wheel_part",
+        "lt_2.wheel_part"
+      ]
+    },
+    "mlg": {
+      "label": "主起",
+      "source_adm": "mlg.adm",
+      "anchor_marker_id": 1115,
+      "anchor_path": "jishenzhongxin.MARKER_1115",
+      "part_names": [
+        "lunzhou_right",
+        "shang_right",
+        "xia_right",
+        "huosai_right",
+        "waitong_right",
+        "diaolan_right",
+        "lunzhou_left",
+        "shang_left",
+        "xia_left",
+        "huosai_left",
+        "waitong_left",
+        "diaolan_left",
+        "jishenzhongxin",
+        "lt_3.wheel_part",
+        "lt_4.wheel_part"
+      ]
+    }
+  }
+    }
+  ]
+}

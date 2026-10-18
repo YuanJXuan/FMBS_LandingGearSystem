@@ -1,0 +1,117 @@
+{
+  "version": 4,
+  "coaxial": [
+    {
+      "id": "main_shock_strut_axis",
+      "start": "waitong.MARKER_7",
+      "end": "huosai.MARKER_25",
+      "axis": "z",
+      "align_end_orientation": false,
+      "markers": [
+        {"path": "waitong.MARKER_9", "fraction": 0.0, "align_orientation": false},
+        {"path": "waitong.MARKER_61", "fraction": 0.0},
+        {"path": "waitong.cm", "distance": 500.0, "distance_from": "start"},
+        {"path": "waitong.MARKER_17", "cylinder": "huosai.CYLINDER_15", "cylinder_scale": 1.0, "distance_from": "end"},
+        {"path": "huosai.MARKER_18", "cylinder": "huosai.CYLINDER_15", "cylinder_scale": 1.0, "distance_from": "end"},
+        {"path": "huosai.MARKER_6", "cylinder": "huosai.CYLINDER_15", "cylinder_scale": 1.0, "distance_from": "end"},
+        {"path": "huosai.MARKER_10", "cylinder": "huosai.CYLINDER_15", "cylinder_scale": 1.0, "distance_from": "end"},
+        {"path": "huosai.MARKER_62", "cylinder": "huosai.CYLINDER_15", "cylinder_scale": 1.0, "distance_from": "end"},
+        {"path": "huosai.cm", "cylinder": "huosai.CYLINDER_15", "distance_from": "end", "reverse": true},
+        {"path": "waitong.MARKER_63", "cylinder": "waitong.CYLINDER_16", "cylinder_scale": 1.0, "distance_from": "start"},
+        {"path": "waitong.MARKER_64", "cylinder": "waitong.CYLINDER_16", "cylinder_scale": 1.0, "distance_from": "start"},
+        {"path": "waitong.MARKER_66", "cylinder": "waitong.CYLINDER_16", "cylinder_scale": 1.0, "distance_from": "start"},
+        {"path": "waitong.MARKER_68", "cylinder": "waitong.CYLINDER_16", "cylinder_scale": 1.0, "distance_from": "start"},
+        {"path": "huosai.MARKER_65", "fraction": 1.0},
+        {"path": "huosai.MARKER_67", "fraction": 1.0},
+        {"path": "huosai.MARKER_69", "fraction": 1.0}
+      ],
+      "recompute": [
+        "JOINT_1",
+        "JOINT_5",
+        "JOINT_6",
+        "stopper_zuo",
+        "spring_zuo",
+        "damperZ_zuo",
+        "damperH_zuo"
+      ]
+    },
+    {
+      "id": "wheel_axle_axis",
+      "start": "huosai.MARKER_25",
+      "end": "lunzhou.MARKER_71",
+      "axis": "z",
+      "align_start_orientation": false,
+      "align_end_orientation": false,
+      "markers": [
+        {"path": "lunzhou.MARKER_26", "fraction": 0.0, "align_orientation": false},
+        {"path": "lunzhou.MARKER_2", "fraction": 0.0},
+        {"path": "lunzhou.cm", "fraction": 0.5}
+      ],
+      "length_targets": [
+        {"path": "lunzhou.CYLINDER_11"}
+      ],
+      "recompute": ["JOINT_5", "JOINT_12"]
+    },
+    {
+      "id": "upper_torque_link_axis",
+      "start": "waitong.MARKER_56",
+      "end": "shang.MARKER_23",
+      "axis": "z",
+      "align_start_orientation": false,
+      "align_end_orientation": false,
+      "markers": [
+        {"path": "shang.MARKER_55", "fraction": 0.0, "align_orientation": false},
+        {"path": "shang.MARKER_3", "fraction": 0.0},
+        {"path": "shang.cm", "fraction": 0.5}
+      ],
+      "length_targets": [
+        {"path": "shang.CYLINDER_12"}
+      ],
+      "recompute": ["JOINT_10", "JOINT_4"]
+    },
+    {
+      "id": "lower_torque_link_axis",
+      "start": "shang.MARKER_23",
+      "end": "huosai.MARKER_54",
+      "axis": "z",
+      "align_start_orientation": false,
+      "align_end_orientation": false,
+      "markers": [
+        {"path": "xia.MARKER_24", "fraction": 0.0, "align_orientation": false},
+        {"path": "xia.MARKER_4", "fraction": 0.0},
+        {"path": "xia.cm", "fraction": 0.5},
+        {"path": "xia.MARKER_52", "fraction": 1.0, "align_orientation": false},
+        {"path": "xia.MARKER_53", "fraction": 1.0, "align_orientation": false}
+      ],
+      "length_targets": [
+        {"path": "xia.CYLINDER_13"}
+      ],
+      "recompute": ["JOINT_4", "JOINT_9"]
+    }
+  ],
+  "parameters": [
+    {"id": "shock_upper_mount", "label": "外筒上安装点", "driver": "waitong.MARKER_7", "axes": ["x", "y", "z"], "table_only": true},
+    {"id": "shock_lower_axle_mount", "label": "活塞杆下端及轮轴连接点", "driver": "huosai.MARKER_25", "axes": ["x", "y", "z"], "table_only": true},
+    {"id": "wheel_center", "label": "轮心位置", "driver": "lunzhou.MARKER_71", "axes": ["x", "y", "z"], "table_only": true, "followers": [{"path": "luntai.wheel_part", "target_type": "part", "operation": "copy", "axes": ["x", "y", "z"]}], "recompute": ["JOINT_12"]},
+    {"id": "upper_torque_link_mount", "label": "上扭力臂安装点", "driver": "waitong.MARKER_56", "axes": ["x", "y", "z"], "table_only": true},
+    {"id": "torque_link_knee", "label": "上下扭力臂中间铰点", "driver": "shang.MARKER_23", "axes": ["x", "y", "z"], "table_only": true},
+    {"id": "lower_torque_link_mount", "label": "下扭力臂安装点", "driver": "huosai.MARKER_54", "axes": ["x", "y", "z"], "table_only": true},
+    {
+      "id": "main_mass_point",
+      "label": "主起质量点",
+      "description": "同步吊篮质心、外筒固定副和平移导向副的同位置Marker。",
+      "driver": "diaolan.MARKER_27",
+      "axes": ["x", "y", "z"],
+      "table_only": true,
+      "coincident_with": ["waitong.MARKER_7"],
+      "followers": [
+        {"path": "diaolan.cm", "operation": "copy", "axes": ["x", "y", "z"]},
+        {"path": "diaolan.MARKER_28", "operation": "copy", "axes": ["x", "y", "z"]},
+        {"path": "waitong.MARKER_29", "operation": "copy", "axes": ["x", "y", "z"]},
+        {"path": "diaolan.MARKER_57", "operation": "copy", "axes": ["x", "y", "z"]},
+        {"path": "road.road_part.MARKER_58", "operation": "copy", "axes": ["x", "y", "z"]}
+      ],
+      "recompute": ["JOINT_6", "JOINT_11"]
+    }
+  ]
+}

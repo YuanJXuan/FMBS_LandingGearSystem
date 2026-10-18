@@ -1,0 +1,1894 @@
+Adams View model name: mlg
+!
+!-------------------------------- SYSTEM UNITS ---------------------------------
+!
+UNITS/
+, FORCE = NEWTON
+, MASS = KILOGRAM
+, LENGTH = MILLIMETER
+, TIME = SECOND
+!
+!----------------------------------- PARTS -------------------------------------
+!
+!----------------------------------- Ground ------------------------------------
+!
+!                            adams_view_name='ground'
+PART/1
+, GROUND
+!
+!                           adams_view_name='MARKER_8'
+MARKER/8
+, PART = 1
+, QP = 9872, 1375, -1649
+!
+!                           adams_view_name='lm_ref_1'
+MARKER/19
+, PART = 1
+, QP = 0, 0, -3317
+!
+!                        adams_view_name='lt_1_tire_jf_1'
+MARKER/20
+, PART = 1
+, FLOATING
+!
+!                          adams_view_name='road_ref_1'
+MARKER/33
+, PART = 1
+, QP = 9872, 1375, -3354
+!
+!                       adams_view_name='luntai_tire_jf_1'
+MARKER/34
+, PART = 1
+, FLOATING
+!
+!                        adams_view_name='MARKER_8_right'
+MARKER/1008
+, PART = 1
+, QP = 9872, -1375, -1649
+!
+!                    adams_view_name='luntai_tire_jf_1_right'
+MARKER/1034
+, PART = 1
+, FLOATING
+!
+!                        adams_view_name='lt_2_tire_jf_1'
+MARKER/1073
+, PART = 1
+, FLOATING
+!
+!                        adams_view_name='lt_3_tire_jf_1'
+MARKER/1162
+, PART = 1
+, FLOATING
+!
+!                        adams_view_name='lt_4_tire_jf_1'
+MARKER/1163
+, PART = 1
+, FLOATING
+!
+!                         adams_view_name='MARKER_1192'
+MARKER/1192
+, PART = 1
+, QP = 9380.4, 0, -57
+!
+!                         adams_view_name='MARKER_1194'
+MARKER/1194
+, PART = 1
+, QP = 9380.4, 0, -57
+, REULER = 90D, 90D, 0D
+!
+!------------------------------------ Part -------------------------------------
+!
+!                        adams_view_name='lunzhou_right'
+PART/3
+, MASS = 20
+, CM = 35
+, IP = 35373.27673, 35373.27673, 3167.756125
+!
+!                           adams_view_name='MARKER_2'
+MARKER/2
+, PART = 3
+, QP = 9874, 1121, -1643
+, REULER = 180.4511385D, 91.35315002D, 18.44027635D
+!
+!                          adams_view_name='MARKER_26'
+MARKER/26
+, PART = 3
+, QP = 9874, 1121, -1643
+!
+!                              adams_view_name='cm'
+MARKER/35
+, PART = 3
+, QP = 9873, 1248, -1646
+, REULER = 180.4511385D, 91.35315002D, 75.03475321D
+!
+!                         adams_view_name='MARKER_1159'
+MARKER/1159
+, PART = 3
+, QP = 9872, 1375, -1649
+, REULER = 180D, 90D, 180D
+!
+!                         adams_view_name='CYLINDER_11'
+GRAPHICS/11
+, CYLINDER
+, CM = 2
+, LENGTH = 254.078728
+, RADIUS = 31.75984099
+!
+!------------------------------------ Part -------------------------------------
+!
+!                         adams_view_name='shang_right'
+PART/4
+, MASS = 10
+, CM = 36
+, IP = 1.194878925E+05, 1.194878925E+05, 10700.40828
+!
+!                           adams_view_name='MARKER_3'
+MARKER/3
+, PART = 4
+, QP = 9997, 1018, -1023
+, REULER = 66.39981013D, 159.7086126D, 247.7171588D
+!
+!                          adams_view_name='MARKER_23'
+MARKER/23
+, PART = 4
+, QP = 10100, 973, -1327
+!
+!                              adams_view_name='cm'
+MARKER/36
+, PART = 4
+, QP = 10048.5, 995.5, -1175
+, REULER = 66.39981013D, 159.7086126D, 333.1672095D
+!
+!                          adams_view_name='MARKER_55'
+MARKER/55
+, PART = 4
+, QP = 9997, 1018, -1023
+, REULER = 177.4240526D, 97.55612275D, 180D
+!
+!                         adams_view_name='CYLINDER_12'
+GRAPHICS/12
+, CYLINDER
+, CM = 3
+, LENGTH = 324.1141774
+, RADIUS = 40.51427218
+!
+!------------------------------------ Part -------------------------------------
+!
+!                          adams_view_name='xia_right'
+PART/5
+, MASS = 10
+, CM = 37
+, IP = 1.656344868E+05, 1.656344868E+05, 14832.93912
+!
+!                           adams_view_name='MARKER_4'
+MARKER/4
+, PART = 5
+, QP = 10100, 973, -1327
+, REULER = 234.833564D, 152.1800981D, 58.07241625D
+!
+!                          adams_view_name='MARKER_24'
+MARKER/24
+, PART = 5
+, QP = 10100, 973, -1327
+!
+!                              adams_view_name='cm'
+MARKER/37
+, PART = 5
+, QP = 10034, 1019.5, -1480
+, REULER = 54.83356396D, 27.8199019D, 310.0524108D
+!
+!                          adams_view_name='MARKER_52'
+MARKER/52
+, PART = 5
+, QP = 9968, 1066, -1633
+!
+!                          adams_view_name='MARKER_53'
+MARKER/53
+, PART = 5
+, QP = 9968, 1066, -1633
+, REULER = 180D, 90D, 180D
+!
+!                         adams_view_name='CYLINDER_13'
+GRAPHICS/13
+, CYLINDER
+, CM = 4
+, LENGTH = 345.9898842
+, RADIUS = 43.24873553
+!
+!------------------------------------ Part -------------------------------------
+!
+!                         adams_view_name='huosai_right'
+PART/7
+, MASS = 170
+, CM = 38
+, IP = 6.253937006E+07, 6.253937006E+07, 8.331115362E+06
+!
+!                           adams_view_name='MARKER_6'
+MARKER/6
+, PART = 7
+, QP = 9874, 1066.81, -607
+, REULER = 180D, 177.0057613D, 0D
+!
+!                          adams_view_name='MARKER_10'
+MARKER/10
+, PART = 7
+, QP = 9874, 1066.81, -607
+!
+!                          adams_view_name='MARKER_18'
+MARKER/18
+, PART = 7
+, QP = 9874, 1066.81, -607
+!
+!                          adams_view_name='MARKER_25'
+MARKER/25
+, PART = 7
+, QP = 9874, 1121, -1643
+!
+!                              adams_view_name='cm'
+MARKER/38
+, PART = 7
+, QP = 9874, 1093.905, -1125
+, REULER = 0D, 2.99423869D, 18.2119353D
+!
+!                          adams_view_name='MARKER_54'
+MARKER/54
+, PART = 7
+, QP = 9968, 1066, -1633
+, REULER = 180D, 90D, 180D
+!
+!                         adams_view_name='CYLINDER_15'
+GRAPHICS/15
+, CYLINDER
+, CM = 6
+, LENGTH = 1037.416289
+, RADIUS = 160
+!
+!------------------------------------ Part -------------------------------------
+!
+!                        adams_view_name='waitong_right'
+PART/8
+, MASS = 690.045083
+, CM = 39
+, IP = 7.260218876E+07, 7.260218876E+07, 1.286353035E+07
+!
+!                           adams_view_name='MARKER_7'
+MARKER/7
+, PART = 8
+, QP = 9874, 1037, -37
+, REULER = 180D, 177.0059378D, 0D
+!
+!                           adams_view_name='MARKER_9'
+MARKER/9
+, PART = 8
+, QP = 9874, 1037, -37
+!
+!                          adams_view_name='MARKER_17'
+MARKER/17
+, PART = 8
+, QP = 9874, 1066.81, -607
+!
+!                          adams_view_name='MARKER_29'
+MARKER/29
+, PART = 8
+, QP = 9874, 1037, -37
+!
+!                              adams_view_name='cm'
+MARKER/39
+, PART = 8
+, QP = 9874, 1063.116232, -536.3174766
+, REULER = 0D, 2.99406217D, 0D
+!
+!                          adams_view_name='MARKER_56'
+MARKER/56
+, PART = 8
+, QP = 9997, 1018, -1023
+, REULER = 177.4240526D, 97.55612275D, 180D
+!
+!                          adams_view_name='MARKER_63'
+MARKER/63
+, PART = 8
+, QP = 9874, 1091.112832, -1071.585812
+!
+!                         adams_view_name='CYLINDER_16'
+GRAPHICS/16
+, CYLINDER
+, CM = 7
+, LENGTH = 1036
+, RADIUS = 180
+!
+!------------------------------------ Part -------------------------------------
+!
+!                        adams_view_name='diaolan_right'
+PART/9
+, MASS = 1
+, CM = 51
+, IP = 1.307070096E+05, 1.307070096E+05, 1.307070096E+05
+!
+!                          adams_view_name='MARKER_27'
+MARKER/27
+, PART = 9
+, QP = 9874, 1037, -37
+!
+!                          adams_view_name='MARKER_28'
+MARKER/28
+, PART = 9
+, QP = 9874, 1037, -37
+!
+!                              adams_view_name='cm'
+MARKER/51
+, PART = 9
+, QP = 9874, 1037, -37
+!
+!                         adams_view_name='MARKER_1130'
+MARKER/1130
+, PART = 9
+, QP = 9874, 1037, -37
+!
+!                         adams_view_name='ELLIPSOID_33'
+GRAPHICS/24
+, ELLIPSOID
+, CM = 27
+, XSCALE = 200
+, YSCALE = 200
+, ZSCALE = 200
+!
+!------------------------------------ Part -------------------------------------
+!
+!PART/12
+!, QG = 9872, 1375, -1649
+!, REULER = 0D, 90D, 0D
+!, CM = 47
+!, IP = 0, 0, 0
+!, VM = 41
+!, WM = 41
+!, VX = 0
+!, WZ = 0D
+!MARKER/47
+!, PART = 12
+!MARKER/48
+!, PART = 12
+!, FLOATING
+!MARKER/49
+!, PART = 12
+!, QP = 0, 0, -140
+!, REULER = 0D, 180D, 0D
+!MARKER/50
+!, PART = 12
+!, QP = 0, 0, 140
+!GRAPHICS/41
+!, CYLINDER
+!, CM = 49
+!, LENGTH = -280
+!, RADIUS = 430
+!, SEG = 0
+!GRAPHICS/48
+!, FRUSTUM
+!, CM = 49
+!, LENGTH = 38.5
+!, SIDES = 20
+!, TOP = 353
+!, BOTTOM = 430
+!, SEG = 0
+!GRAPHICS/49
+!, FRUSTUM
+!, CM = 50
+!, LENGTH = 38.5
+!, SIDES = 20
+!, TOP = 353
+!, BOTTOM = 430
+!, SEG = 0
+!                         adams_view_name='lunzhou_left'
+PART/1003
+, MASS = 20
+, CM = 1035
+, IP = 35373.27673, 35373.27673, 3167.756125
+!
+!                        adams_view_name='MARKER_2_right'
+MARKER/1002
+, PART = 1003
+, QP = 9874, -1121, -1643
+, REULER = 359.5488615D, 91.35315002D, 161.5597237D
+!
+!                       adams_view_name='MARKER_26_right'
+MARKER/1026
+, PART = 1003
+, QP = 9874, -1121, -1643
+!
+!                           adams_view_name='cm_right'
+MARKER/1035
+, PART = 1003
+, QP = 9873, -1248, -1646
+, REULER = 359.5488615D, 91.35315002D, 104.9652468D
+!
+!                         adams_view_name='MARKER_1157'
+MARKER/1157
+, PART = 1003
+, QP = 9872, -1375, -1649
+, REULER = 180D, 90D, 180D
+!
+!                      adams_view_name='CYLINDER_11_right'
+GRAPHICS/1011
+, CYLINDER
+, CM = 1002
+, LENGTH = 254.078728
+, RADIUS = 31.75984099
+!
+!------------------------------------ Part -------------------------------------
+!
+!                          adams_view_name='shang_left'
+PART/1004
+, MASS = 10
+, CM = 1036
+, IP = 1.194878925E+05, 1.194878925E+05, 10700.40828
+!
+!                        adams_view_name='MARKER_3_right'
+MARKER/1003
+, PART = 1004
+, QP = 9997, -1018, -1023
+, REULER = 113.6001899D, 159.7086126D, 292.2828412D
+!
+!                       adams_view_name='MARKER_23_right'
+MARKER/1023
+, PART = 1004
+, QP = 10100, -973, -1327
+!
+!                           adams_view_name='cm_right'
+MARKER/1036
+, PART = 1004
+, QP = 10048.5, -995.5, -1175
+, REULER = 113.6001899D, 159.7086126D, 206.8327905D
+!
+!                       adams_view_name='MARKER_55_right'
+MARKER/1055
+, PART = 1004
+, QP = 9997, -1018, -1023
+, REULER = 2.5759474D, 97.55612275D, 0D
+!
+!                      adams_view_name='CYLINDER_12_right'
+GRAPHICS/1012
+, CYLINDER
+, CM = 1003
+, LENGTH = 324.1141774
+, RADIUS = 40.51427218
+!
+!------------------------------------ Part -------------------------------------
+!
+!                           adams_view_name='xia_left'
+PART/1005
+, MASS = 10
+, CM = 1037
+, IP = 1.656344868E+05, 1.656344868E+05, 14832.93912
+!
+!                        adams_view_name='MARKER_4_right'
+MARKER/1004
+, PART = 1005
+, QP = 10100, -973, -1327
+, REULER = 305.166436D, 152.1800981D, 121.9275838D
+!
+!                       adams_view_name='MARKER_24_right'
+MARKER/1024
+, PART = 1005
+, QP = 10100, -973, -1327
+!
+!                           adams_view_name='cm_right'
+MARKER/1037
+, PART = 1005
+, QP = 10034, -1019.5, -1480
+, REULER = 125.166436D, 27.8199019D, 229.9475892D
+!
+!                       adams_view_name='MARKER_52_right'
+MARKER/1052
+, PART = 1005
+, QP = 9968, -1066, -1633
+!
+!                       adams_view_name='MARKER_53_right'
+MARKER/1053
+, PART = 1005
+, QP = 9968, -1066, -1633
+, REULER = 0D, 90D, 0D
+!
+!                      adams_view_name='CYLINDER_13_right'
+GRAPHICS/1013
+, CYLINDER
+, CM = 1004
+, LENGTH = 345.9898842
+, RADIUS = 43.24873553
+!
+!------------------------------------ Part -------------------------------------
+!
+!                         adams_view_name='huosai_left'
+PART/1007
+, MASS = 170
+, CM = 1038
+, IP = 6.253937006E+07, 6.253937006E+07, 8.331115362E+06
+!
+!                        adams_view_name='MARKER_6_right'
+MARKER/1006
+, PART = 1007
+, QP = 9874, -1066.81, -607
+, REULER = 0D, 177.0057613D, 180D
+!
+!                       adams_view_name='MARKER_10_right'
+MARKER/1010
+, PART = 1007
+, QP = 9874, -1066.81, -607
+!
+!                       adams_view_name='MARKER_18_right'
+MARKER/1018
+, PART = 1007
+, QP = 9874, -1066.81, -607
+!
+!                       adams_view_name='MARKER_25_right'
+MARKER/1025
+, PART = 1007
+, QP = 9874, -1121, -1643
+!
+!                           adams_view_name='cm_right'
+MARKER/1038
+, PART = 1007
+, QP = 9874, -1093.905, -1125
+, REULER = 180D, 2.99423869D, 161.7880647D
+!
+!                       adams_view_name='MARKER_54_right'
+MARKER/1054
+, PART = 1007
+, QP = 9968, -1066, -1633
+, REULER = 0D, 90D, 0D
+!
+!                      adams_view_name='CYLINDER_15_right'
+GRAPHICS/1015
+, CYLINDER
+, CM = 1006
+, LENGTH = 1037.416289
+, RADIUS = 160
+!
+!------------------------------------ Part -------------------------------------
+!
+!                         adams_view_name='waitong_left'
+PART/1008
+, MASS = 690
+, CM = 1039
+, IP = 8.024049591E+07, 8.024049591E+07, 1.332661744E+07
+!
+!                        adams_view_name='MARKER_7_right'
+MARKER/1007
+, PART = 1008
+, QP = 9874, -1037, -37
+, REULER = 0D, 177.0059378D, 180D
+!
+!                        adams_view_name='MARKER_9_right'
+MARKER/1009
+, PART = 1008
+, QP = 9874, -1037, -37
+!
+!                       adams_view_name='MARKER_17_right'
+MARKER/1017
+, PART = 1008
+, QP = 9874, -1066.81, -607
+!
+!                       adams_view_name='MARKER_29_right'
+MARKER/1029
+, PART = 1008
+, QP = 9874, -1037, -37
+!
+!                           adams_view_name='cm_right'
+MARKER/1039
+, PART = 1008
+, QP = 9874, -1064.056416, -554.2929057
+, REULER = 0D, 177.0059378D, 270D
+!
+!                       adams_view_name='MARKER_56_right'
+MARKER/1056
+, PART = 1008
+, QP = 9997, -1018, -1023
+, REULER = 2.5759474D, 97.55612275D, 0D
+!
+!                       adams_view_name='MARKER_63_right'
+MARKER/1063
+, PART = 1008
+, QP = 9874, -1091.112832, -1071.585812
+!
+!                       adams_view_name='CYLINDER_16_left'
+GRAPHICS/1016
+, CYLINDER
+, CM = 1007
+, LENGTH = 1036
+, RADIUS = 180
+!
+!------------------------------------ Part -------------------------------------
+!
+!                         adams_view_name='diaolan_left'
+PART/1009
+, MASS = 1
+, CM = 1051
+, IP = 1.307070096E+05, 1.307070096E+05, 1.307070096E+05
+!
+!                        adams_view_name='MARKER_27_left'
+MARKER/1027
+, PART = 1009
+, QP = 9874, -1037, -37
+!
+!                        adams_view_name='MARKER_28_left'
+MARKER/1028
+, PART = 1009
+, QP = 9874, -1037, -37
+!
+!                           adams_view_name='cm_left'
+MARKER/1051
+, PART = 1009
+, QP = 9874, -1037, -37
+!
+!                         adams_view_name='MARKER_1128'
+MARKER/1128
+, PART = 1009
+, QP = 9874, -1037, -37
+!
+!                      adams_view_name='ELLIPSOID_33_left'
+GRAPHICS/1024
+, ELLIPSOID
+, CM = 1027
+, XSCALE = 200
+, YSCALE = 200
+, ZSCALE = 200
+!
+!------------------------------------ Part -------------------------------------
+!
+!                        adams_view_name='jishenzhongxin'
+PART/1024
+, MASS = 15000
+, CM = 1122
+, IP = 1.307070096E+05, 1.307070096E+05, 1.307070096E+05
+!
+!                         adams_view_name='MARKER_1115'
+MARKER/1115
+, PART = 1024
+, QP = 9380.4, 0, -57
+!
+!                              adams_view_name='cm'
+MARKER/1122
+, PART = 1024
+, QP = 9380.4, 0, -57
+, REULER = 180D, 90D, 90D
+!
+!                         adams_view_name='MARKER_1127'
+MARKER/1127
+, PART = 1024
+, QP = 9874, -1037, -37
+!
+!                         adams_view_name='MARKER_1129'
+MARKER/1129
+, PART = 1024
+, QP = 9874, 1037, -37
+!
+!                         adams_view_name='MARKER_1154'
+MARKER/1154
+, PART = 1024
+, QP = 9380.4, 0, -57
+!
+!                         adams_view_name='MARKER_1193'
+MARKER/1193
+, PART = 1024
+, QP = 9380.4, 0, -57
+, REULER = 90D, 90D, 0D
+!
+!                        adams_view_name='ELLIPSOID_1076'
+GRAPHICS/1076
+, ELLIPSOID
+, CM = 1115
+, XSCALE = 200
+, YSCALE = 200
+, ZSCALE = 200
+!
+!------------------------------------ Part -------------------------------------
+!
+!                         adams_view_name='lm.road_part'
+PART/1025
+, QG = 0, 0, -3317
+!
+!                           adams_view_name='road_ref'
+MARKER/1133
+, PART = 1025
+!
+!                         adams_view_name='MARKER_1155'
+MARKER/1155
+, PART = 1025
+, QP = 9380.4, 0, 3260
+!
+!------------------------------------ Part -------------------------------------
+!
+!                       adams_view_name='lt_3.wheel_part'
+PART/1030
+, QG = 9872, 1375, -1649
+, REULER = 0D, 90D, 0D
+, MASS = 40
+, CM = 1164
+, IP = 10000, 10000, 10000
+, VM = 1164
+, WM = 1164
+, VX = 0
+, WZ = 0D
+!
+!                         adams_view_name='MARKER_1158'
+MARKER/1158
+, PART = 1030
+, REULER = 0D, 180D, 0D
+!
+!                            adams_view_name='gfo_i'
+MARKER/1160
+, PART = 1030
+, REULER = 180D, 90D, 180D
+!
+!                           adams_view_name='wheel_cm'
+MARKER/1164
+, PART = 1030
+!
+!                            adams_view_name='tire_i'
+MARKER/1165
+, PART = 1030
+, REULER = 180D, 90D, 180D
+!
+!                           adams_view_name='geo_ctr'
+MARKER/1166
+, PART = 1030
+, QP = 0, 0, -28
+!
+!                           adams_view_name='geo_inr'
+MARKER/1167
+, PART = 1030
+, QP = 0, 0, -140
+, REULER = 0D, 180D, 0D
+!
+!                           adams_view_name='geo_otr'
+MARKER/1168
+, PART = 1030
+, QP = 0, 0, 140
+!
+!                         adams_view_name='graphics_ref'
+MARKER/1169
+, PART = 1030
+, REULER = 180D, 90D, 270D
+!
+!                          adams_view_name='wheel_hub'
+GRAPHICS/1101
+, CYLINDER
+, CM = 1166
+, LENGTH = 56
+, RADIUS = 233
+!
+!                          adams_view_name='wheel_rim'
+GRAPHICS/1102
+, CYLINDER
+, CM = 1167
+, LENGTH = -280
+, RADIUS = 233
+, SEG = 0
+!
+!                          adams_view_name='tire_tread'
+GRAPHICS/1103
+, CYLINDER
+, CM = 1167
+, LENGTH = -280
+, RADIUS = 430
+, SEG = 0
+!
+!                         adams_view_name='wheel_inner1'
+GRAPHICS/1109
+, FRUSTUM
+, CM = 1167
+, LENGTH = 0
+, SIDES = 20
+, TOP = 233
+, BOTTOM = 276
+, SEG = 0
+!
+!                         adams_view_name='wheel_outer1'
+GRAPHICS/1110
+, FRUSTUM
+, CM = 1168
+, LENGTH = 0
+, SIDES = 20
+, TOP = 233
+, BOTTOM = 276
+, SEG = 0
+!
+!                        adams_view_name='tire_sidewall1'
+GRAPHICS/1111
+, FRUSTUM
+, CM = 1167
+, LENGTH = 38.5
+, SIDES = 20
+, TOP = 353
+, BOTTOM = 276
+, SEG = 0
+!
+!                        adams_view_name='tire_sidewall2'
+GRAPHICS/1112
+, FRUSTUM
+, CM = 1167
+, LENGTH = 38.5
+, SIDES = 20
+, TOP = 353
+, BOTTOM = 430
+, SEG = 0
+!
+!                        adams_view_name='tire_sidewall3'
+GRAPHICS/1113
+, FRUSTUM
+, CM = 1168
+, LENGTH = 38.5
+, SIDES = 20
+, TOP = 353
+, BOTTOM = 276
+, SEG = 0
+!
+!                        adams_view_name='tire_sidewall4'
+GRAPHICS/1114
+, FRUSTUM
+, CM = 1168
+, LENGTH = 38.5
+, SIDES = 20
+, TOP = 353
+, BOTTOM = 430
+, SEG = 0
+!
+!------------------------------------ Part -------------------------------------
+!
+!                        adams_view_name='lt_3.belt_part'
+!PART/1031
+!, QG = 9872, 1375, -1649
+!, REULER = 0D, 90D, 0D
+!, CM = 1170
+!, IP = 0, 0, 0
+!, VM = 1164
+!, WM = 1164
+!, VX = 0
+!, WZ = 0D
+!
+!                           adams_view_name='belt_cm'
+!MARKER/1170
+!, PART = 1031
+!
+!                            adams_view_name='float'
+!MARKER/1171
+!, PART = 1031
+!, FLOATING
+!
+!                           adams_view_name='geo_inr'
+!MARKER/1172
+!, PART = 1031
+!, QP = 0, 0, -140
+!, REULER = 0D, 180D, 0D
+!
+!                           adams_view_name='geo_otr'
+!MARKER/1173
+!, PART = 1031
+!, QP = 0, 0, 140
+!
+!                          adams_view_name='tire_tread'
+!GRAPHICS/1104
+!, CYLINDER
+!, CM = 1172
+!, LENGTH = -280
+!, RADIUS = 430
+!, SEG = 0
+!
+!                        adams_view_name='tire_sidewall2'
+!GRAPHICS/1115
+!, FRUSTUM
+!, CM = 1172
+!, LENGTH = 38.5
+!, SIDES = 20
+!, TOP = 353
+!, BOTTOM = 430
+!, SEG = 0
+!
+!                        adams_view_name='tire_sidewall4'
+!GRAPHICS/1116
+!, FRUSTUM
+!, CM = 1173
+!, LENGTH = 38.5
+!, SIDES = 20
+!, TOP = 353
+!, BOTTOM = 430
+!, SEG = 0
+!
+!------------------------------------ Part -------------------------------------
+!
+!                       adams_view_name='lt_4.wheel_part'
+PART/1032
+, QG = 9872, -1375, -1649
+, REULER = 0D, 90D, 0D
+, MASS = 40
+, CM = 1174
+, IP = 10000, 10000, 10000
+, VM = 1174
+, WM = 1174
+, VX = 0
+, WZ = 0D
+!
+!                         adams_view_name='MARKER_1156'
+MARKER/1156
+, PART = 1032
+, REULER = 0D, 180D, 0D
+!
+!                            adams_view_name='gfo_i'
+MARKER/1161
+, PART = 1032
+, REULER = 180D, 90D, 180D
+!
+!                           adams_view_name='wheel_cm'
+MARKER/1174
+, PART = 1032
+!
+!                            adams_view_name='tire_i'
+MARKER/1175
+, PART = 1032
+, REULER = 180D, 90D, 180D
+!
+!                           adams_view_name='geo_ctr'
+MARKER/1176
+, PART = 1032
+, QP = 0, 0, -28
+!
+!                           adams_view_name='geo_inr'
+MARKER/1177
+, PART = 1032
+, QP = 0, 0, -140
+, REULER = 0D, 180D, 0D
+!
+!                           adams_view_name='geo_otr'
+MARKER/1178
+, PART = 1032
+, QP = 0, 0, 140
+!
+!                         adams_view_name='graphics_ref'
+MARKER/1179
+, PART = 1032
+, REULER = 180D, 90D, 270D
+!
+!                          adams_view_name='wheel_hub'
+GRAPHICS/1105
+, CYLINDER
+, CM = 1176
+, LENGTH = 56
+, RADIUS = 233
+!
+!                          adams_view_name='wheel_rim'
+GRAPHICS/1106
+, CYLINDER
+, CM = 1177
+, LENGTH = -280
+, RADIUS = 233
+, SEG = 0
+!
+!                          adams_view_name='tire_tread'
+GRAPHICS/1107
+, CYLINDER
+, CM = 1177
+, LENGTH = -280
+, RADIUS = 430
+, SEG = 0
+!
+!                         adams_view_name='wheel_inner1'
+GRAPHICS/1117
+, FRUSTUM
+, CM = 1177
+, LENGTH = 0
+, SIDES = 20
+, TOP = 233
+, BOTTOM = 276
+, SEG = 0
+!
+!                         adams_view_name='wheel_outer1'
+GRAPHICS/1118
+, FRUSTUM
+, CM = 1178
+, LENGTH = 0
+, SIDES = 20
+, TOP = 233
+, BOTTOM = 276
+, SEG = 0
+!
+!                        adams_view_name='tire_sidewall1'
+GRAPHICS/1119
+, FRUSTUM
+, CM = 1177
+, LENGTH = 38.5
+, SIDES = 20
+, TOP = 353
+, BOTTOM = 276
+, SEG = 0
+!
+!                        adams_view_name='tire_sidewall2'
+GRAPHICS/1120
+, FRUSTUM
+, CM = 1177
+, LENGTH = 38.5
+, SIDES = 20
+, TOP = 353
+, BOTTOM = 430
+, SEG = 0
+!
+!                        adams_view_name='tire_sidewall3'
+GRAPHICS/1121
+, FRUSTUM
+, CM = 1178
+, LENGTH = 38.5
+, SIDES = 20
+, TOP = 353
+, BOTTOM = 276
+, SEG = 0
+!
+!                        adams_view_name='tire_sidewall4'
+GRAPHICS/1122
+, FRUSTUM
+, CM = 1178
+, LENGTH = 38.5
+, SIDES = 20
+, TOP = 353
+, BOTTOM = 430
+, SEG = 0
+!
+!------------------------------------ Part -------------------------------------
+!
+!                        adams_view_name='lt_4.belt_part'
+!PART/1033
+!, QG = 9872, -1375, -1649
+!, REULER = 0D, 90D, 0D
+!, CM = 1180
+!, IP = 0, 0, 0
+!, VM = 1174
+!, WM = 1174
+!, VX = 0
+!, WZ = 0D
+!
+!                           adams_view_name='belt_cm'
+!MARKER/1180
+!, PART = 1033
+!
+!                            adams_view_name='float'
+!MARKER/1181
+!, PART = 1033
+!, FLOATING
+!
+!                           adams_view_name='geo_inr'
+!MARKER/1182
+!, PART = 1033
+!, QP = 0, 0, -140
+!, REULER = 0D, 180D, 0D
+!
+!                           adams_view_name='geo_otr'
+!MARKER/1183
+!, PART = 1033
+!, QP = 0, 0, 140
+!
+!                          adams_view_name='tire_tread'
+!GRAPHICS/1108
+!, CYLINDER
+!, CM = 1182
+!, LENGTH = -280
+!, RADIUS = 430
+!, SEG = 0
+!
+!                        adams_view_name='tire_sidewall2'
+!GRAPHICS/1123
+!, FRUSTUM
+!, CM = 1182
+!, LENGTH = 38.5
+!, SIDES = 20
+!, TOP = 353
+!, BOTTOM = 430
+!, SEG = 0
+!
+!                        adams_view_name='tire_sidewall4'
+!GRAPHICS/1124
+!, FRUSTUM
+!, CM = 1183
+!, LENGTH = 38.5
+!, SIDES = 20
+!, TOP = 353
+!, BOTTOM = 430
+!, SEG = 0
+!
+!-------------------------------- CONSTRAINTS ----------------------------------
+!
+!                           adams_view_name='JOINT_1'
+JOINT/1
+, CYLINDRICAL
+, I = 17
+, J = 18
+!
+!                           adams_view_name='JOINT_4'
+JOINT/4
+, SPHERICAL
+, I = 23
+, J = 24
+!
+!                           adams_view_name='JOINT_5'
+JOINT/5
+, FIXED
+, I = 25
+, J = 26
+!
+!                           adams_view_name='JOINT_6'
+JOINT/6
+, FIXED
+, I = 28
+, J = 29
+!
+!                           adams_view_name='JOINT_9'
+JOINT/9
+, REVOLUTE
+, I = 53
+, J = 54
+!
+!                           adams_view_name='JOINT_10'
+JOINT/10
+, REVOLUTE
+, I = 55
+, J = 56
+!
+!                        adams_view_name='JOINT_1_right'
+JOINT/1001
+, CYLINDRICAL
+, I = 1017
+, J = 1018
+!
+!                        adams_view_name='JOINT_4_right'
+JOINT/1004
+, SPHERICAL
+, I = 1023
+, J = 1024
+!
+!                        adams_view_name='JOINT_5_right'
+JOINT/1005
+, FIXED
+, I = 1025
+, J = 1026
+!
+!                        adams_view_name='JOINT_6_right'
+JOINT/1006
+, FIXED
+, I = 1028
+, J = 1029
+!
+!                        adams_view_name='JOINT_9_right'
+JOINT/1009
+, REVOLUTE
+, I = 1053
+, J = 1054
+!
+!                        adams_view_name='JOINT_10_right'
+JOINT/1010
+, REVOLUTE
+, I = 1055
+, J = 1056
+!
+!                          adams_view_name='JOINT_1024'
+JOINT/1024
+, FIXED
+, I = 1127
+, J = 1128
+!
+!                          adams_view_name='JOINT_1025'
+JOINT/1025
+, FIXED
+, I = 1129
+, J = 1130
+!
+!                        adams_view_name='lm.road_joint'
+JOINT/1026
+, FIXED
+, I = 1133
+, J = 19
+!
+!                          adams_view_name='JOINT_1027'
+!JOINT/1027
+!, TRANSLATIONAL
+!, I = 1154
+!, J = 1155
+!
+!                          adams_view_name='JOINT_1028'
+JOINT/1028
+, REVOLUTE
+, I = 1156
+, J = 1157
+!
+!                          adams_view_name='JOINT_1029'
+JOINT/1029
+, REVOLUTE
+, I = 1158
+, J = 1159
+!
+!                           adams_view_name='JPRIM_1'
+JPRIM/1
+, ORIENTATION
+, I = 1193
+, J = 1194
+!
+!----------------------------------- FORCES ------------------------------------
+!
+!                    adams_view_name='lt_3.wheel_belt_force'
+!GFORCE/1007
+!, I = 1165
+!, JFLOAT = 1171
+!, RM = 1165
+!, FUNCTION = USER(925, 1008, 1025, 1160, 19)\
+!, ROUTINE = abgTire::gfo925
+!
+!                          adams_view_name='lt_3.force'
+GFORCE/1008
+, I = 1160
+, JFLOAT = 1162
+, RM = 19
+, FUNCTION = USER(908, 1008, 1025)\
+, ROUTINE = abgTire::gfo908
+!
+!                    adams_view_name='lt_4.wheel_belt_force'
+!GFORCE/1009
+!, I = 1175
+!, JFLOAT = 1181
+!, RM = 1175
+!, FUNCTION = USER(925, 1010, 1032, 1161, 19)\
+!, ROUTINE = abgTire::gfo925
+!
+!                          adams_view_name='lt_4.force'
+GFORCE/1010
+, I = 1161
+, JFLOAT = 1163
+, RM = 19
+, FUNCTION = USER(908, 1010, 1032)\
+, ROUTINE = abgTire::gfo908
+!
+!------------------------------ DATA STRUCTURES --------------------------------
+!
+!                        adams_view_name='lt_3.tpf_file'
+STRING/16
+, STRING =uat.tir
+!
+!                        adams_view_name='lt_3.rpf_file'
+STRING/17
+, STRING =2d_flat.rdf
+!
+!                          adams_view_name='lt_3.role'
+STRING/18
+, STRING =none
+!
+!                         adams_view_name='lt_3.contact'
+STRING/19
+, STRING =handling
+!
+!                     adams_view_name='lt_3.simulation_type'
+STRING/20
+, STRING =NOT_SUSPENSION
+!
+!                        adams_view_name='lt_4.tpf_file'
+STRING/21
+, STRING =uat.tir
+!
+!                        adams_view_name='lt_4.rpf_file'
+STRING/22
+, STRING =2d_flat.rdf
+!
+!                          adams_view_name='lt_4.role'
+STRING/23
+, STRING =none
+!
+!                         adams_view_name='lt_4.contact'
+STRING/24
+, STRING =handling
+!
+!                     adams_view_name='lt_4.simulation_type'
+STRING/25
+, STRING =NOT_SUSPENSION
+!
+!time input to the tire
+!                         adams_view_name='lt_3.u_time'
+VARIABLE/1174
+, FUNCTION = TIME
+!
+!tire global x displacement
+!                        adams_view_name='lt_3.u_belt_dx'
+VARIABLE/1175
+, FUNCTION = dx(1160,19,19)
+!
+!tire global y displacement
+!                        adams_view_name='lt_3.u_belt_dy'
+VARIABLE/1176
+, FUNCTION = dy(1160,19,19)
+!
+!tire global z displacement
+!                        adams_view_name='lt_3.u_belt_dz'
+VARIABLE/1177
+, FUNCTION = dz(1160,19,19)
+!
+!tire belt x dot global x
+!                     adams_view_name='lt_3.u_belt_x_dot_x'
+VARIABLE/1178
+, IC = 1
+, FUNCTION = USER(907, 1160, 19, 19, 1, 1)\
+, ROUTINE = abgFDM::var907
+!
+!tire belt x dot global y
+!                     adams_view_name='lt_3.u_belt_x_dot_y'
+VARIABLE/1179
+, IC = 0
+, FUNCTION = USER(907, 1160, 19, 19, 1, 2)\
+, ROUTINE = abgFDM::var907
+!
+!tire belt x dot global z
+!                     adams_view_name='lt_3.u_belt_x_dot_z'
+VARIABLE/1180
+, IC = 0
+, FUNCTION = USER(907, 1160, 19, 19, 1, 3)\
+, ROUTINE = abgFDM::var907
+!
+!tire belt y dot global x
+!                     adams_view_name='lt_3.u_belt_y_dot_x'
+VARIABLE/1181
+, IC = 0
+, FUNCTION = USER(907, 1160, 19, 19, 2, 1)\
+, ROUTINE = abgFDM::var907
+!
+!tire belt y dot global y
+!                     adams_view_name='lt_3.u_belt_y_dot_y'
+VARIABLE/1182
+, IC = 1
+, FUNCTION = USER(907, 1160, 19, 19, 2, 2)\
+, ROUTINE = abgFDM::var907
+!
+!tire belt y dot global z
+!                     adams_view_name='lt_3.u_belt_y_dot_z'
+VARIABLE/1183
+, IC = 0
+, FUNCTION = USER(907, 1160, 19, 19, 2, 3)\
+, ROUTINE = abgFDM::var907
+!
+!tire global x velocity
+!                        adams_view_name='lt_3.u_belt_vx'
+VARIABLE/1184
+, IC = 0
+, FUNCTION = USER(906, 1, 1160, 19, 19)\
+, ROUTINE = abgTire::var906
+!
+!tire global y velocity
+!                        adams_view_name='lt_3.u_belt_vy'
+VARIABLE/1185
+, IC = 0
+, FUNCTION = USER(906, 2, 1160, 19, 19)\
+, ROUTINE = abgTire::var906
+!
+!tire global z velocity
+!                        adams_view_name='lt_3.u_belt_vz'
+VARIABLE/1186
+, IC = 0
+, FUNCTION = USER(906, 3, 1160, 19, 19)\
+, ROUTINE = abgTire::var906
+!
+!tire global wx velocity
+!                        adams_view_name='lt_3.u_belt_wx'
+VARIABLE/1187
+, FUNCTION = USER(906, 4, 1160, 19, 19)\
+, ROUTINE = abgTire::var906
+!
+!tire global wy velocity
+!                        adams_view_name='lt_3.u_belt_wy'
+VARIABLE/1188
+, IC = 0
+, FUNCTION = USER(906, 5, 1160, 19, 19)\
+, ROUTINE = abgTire::var906
+!
+!tire global wz velocity
+!                        adams_view_name='lt_3.u_belt_wz'
+VARIABLE/1189
+, FUNCTION = USER(906, 6, 1160, 19, 19)\
+, ROUTINE = abgTire::var906
+!
+!tire steady state longitudinal slip
+!                   adams_view_name='lt_3.u_belt_ss_lon_slip'
+VARIABLE/1190
+, IC = 0
+, FUNCTION = 0.0
+!
+!                     adams_view_name='lt_3.rolling_radius'
+VARIABLE/1191
+, FUNCTION = USER(918, 1008, 49)\
+, ROUTINE = abgTire::var918
+!
+!                      adams_view_name='lt_3.omega_actual'
+VARIABLE/1192
+, FUNCTION = USER(918, 1008, 50)\
+, ROUTINE = abgTire::var918
+!
+!                  adams_view_name='lt_3.longitudinal_slip_iso'
+VARIABLE/1193
+, FUNCTION = USER(918, 1008, 8)\
+, ROUTINE = abgTire::var918
+!
+!                 adams_view_name='lt_3.lateral_slip_angle_iso'
+VARIABLE/1194
+, FUNCTION = USER(918, 1008, 7)\
+, ROUTINE = abgTire::var918
+!
+!                  adams_view_name='lt_3.inclination_angle_iso'
+VARIABLE/1195
+, FUNCTION = USER(918, 1008, 9)\
+, ROUTINE = abgTire::var918
+!
+!                 adams_view_name='lt_3.longitudinal_force_iso'
+VARIABLE/1196
+, FUNCTION = USER(918, 1008, 38)\
+, ROUTINE = abgTire::var918
+!
+!                    adams_view_name='lt_3.lateral_force_iso'
+VARIABLE/1197
+, FUNCTION = USER(918, 1008, 39)\
+, ROUTINE = abgTire::var918
+!
+!                   adams_view_name='lt_3.vertical_force_iso'
+VARIABLE/1198
+, FUNCTION = USER(918, 1008, 40)\
+, ROUTINE = abgTire::var918
+!
+!                 adams_view_name='lt_3.overturning_moment_iso'
+VARIABLE/1199
+, FUNCTION = USER(918, 1008, 41)\
+, ROUTINE = abgTire::var918
+!
+!                 adams_view_name='lt_3.rolling_resistance_iso'
+VARIABLE/1200
+, FUNCTION = USER(918, 1008, 42)\
+, ROUTINE = abgTire::var918
+!
+!                   adams_view_name='lt_3.aligning_torque_iso'
+VARIABLE/1201
+, FUNCTION = USER(918, 1008, 43)\
+, ROUTINE = abgTire::var918
+!
+!time input to the tire
+!                         adams_view_name='lt_4.u_time'
+VARIABLE/1202
+, FUNCTION = TIME
+!
+!tire global x displacement
+!                        adams_view_name='lt_4.u_belt_dx'
+VARIABLE/1203
+, FUNCTION = dx(1161,19,19)
+!
+!tire global y displacement
+!                        adams_view_name='lt_4.u_belt_dy'
+VARIABLE/1204
+, FUNCTION = dy(1161,19,19)
+!
+!tire global z displacement
+!                        adams_view_name='lt_4.u_belt_dz'
+VARIABLE/1205
+, FUNCTION = dz(1161,19,19)
+!
+!tire belt x dot global x
+!                     adams_view_name='lt_4.u_belt_x_dot_x'
+VARIABLE/1206
+, IC = 1
+, FUNCTION = USER(907, 1161, 19, 19, 1, 1)\
+, ROUTINE = abgFDM::var907
+!
+!tire belt x dot global y
+!                     adams_view_name='lt_4.u_belt_x_dot_y'
+VARIABLE/1207
+, IC = 0
+, FUNCTION = USER(907, 1161, 19, 19, 1, 2)\
+, ROUTINE = abgFDM::var907
+!
+!tire belt x dot global z
+!                     adams_view_name='lt_4.u_belt_x_dot_z'
+VARIABLE/1208
+, IC = 0
+, FUNCTION = USER(907, 1161, 19, 19, 1, 3)\
+, ROUTINE = abgFDM::var907
+!
+!tire belt y dot global x
+!                     adams_view_name='lt_4.u_belt_y_dot_x'
+VARIABLE/1209
+, IC = 0
+, FUNCTION = USER(907, 1161, 19, 19, 2, 1)\
+, ROUTINE = abgFDM::var907
+!
+!tire belt y dot global y
+!                     adams_view_name='lt_4.u_belt_y_dot_y'
+VARIABLE/1210
+, IC = 1
+, FUNCTION = USER(907, 1161, 19, 19, 2, 2)\
+, ROUTINE = abgFDM::var907
+!
+!tire belt y dot global z
+!                     adams_view_name='lt_4.u_belt_y_dot_z'
+VARIABLE/1211
+, IC = 0
+, FUNCTION = USER(907, 1161, 19, 19, 2, 3)\
+, ROUTINE = abgFDM::var907
+!
+!tire global x velocity
+!                        adams_view_name='lt_4.u_belt_vx'
+VARIABLE/1212
+, IC = 0
+, FUNCTION = USER(906, 1, 1161, 19, 19)\
+, ROUTINE = abgTire::var906
+!
+!tire global y velocity
+!                        adams_view_name='lt_4.u_belt_vy'
+VARIABLE/1213
+, IC = 0
+, FUNCTION = USER(906, 2, 1161, 19, 19)\
+, ROUTINE = abgTire::var906
+!
+!tire global z velocity
+!                        adams_view_name='lt_4.u_belt_vz'
+VARIABLE/1214
+, IC = 0
+, FUNCTION = USER(906, 3, 1161, 19, 19)\
+, ROUTINE = abgTire::var906
+!
+!tire global wx velocity
+!                        adams_view_name='lt_4.u_belt_wx'
+VARIABLE/1215
+, FUNCTION = USER(906, 4, 1161, 19, 19)\
+, ROUTINE = abgTire::var906
+!
+!tire global wy velocity
+!                        adams_view_name='lt_4.u_belt_wy'
+VARIABLE/1216
+, IC = 0
+, FUNCTION = USER(906, 5, 1161, 19, 19)\
+, ROUTINE = abgTire::var906
+!
+!tire global wz velocity
+!                        adams_view_name='lt_4.u_belt_wz'
+VARIABLE/1217
+, FUNCTION = USER(906, 6, 1161, 19, 19)\
+, ROUTINE = abgTire::var906
+!
+!tire steady state longitudinal slip
+!                   adams_view_name='lt_4.u_belt_ss_lon_slip'
+VARIABLE/1218
+, IC = 0
+, FUNCTION = 0.0
+!
+!                     adams_view_name='lt_4.rolling_radius'
+VARIABLE/1219
+, FUNCTION = USER(918, 1010, 49)\
+, ROUTINE = abgTire::var918
+!
+!                      adams_view_name='lt_4.omega_actual'
+VARIABLE/1220
+, FUNCTION = USER(918, 1010, 50)\
+, ROUTINE = abgTire::var918
+!
+!                  adams_view_name='lt_4.longitudinal_slip_iso'
+VARIABLE/1221
+, FUNCTION = USER(918, 1010, 8)\
+, ROUTINE = abgTire::var918
+!
+!                 adams_view_name='lt_4.lateral_slip_angle_iso'
+VARIABLE/1222
+, FUNCTION = USER(918, 1010, 7)\
+, ROUTINE = abgTire::var918
+!
+!                  adams_view_name='lt_4.inclination_angle_iso'
+VARIABLE/1223
+, FUNCTION = USER(918, 1010, 9)\
+, ROUTINE = abgTire::var918
+!
+!                 adams_view_name='lt_4.longitudinal_force_iso'
+VARIABLE/1224
+, FUNCTION = USER(918, 1010, 38)\
+, ROUTINE = abgTire::var918
+!
+!                    adams_view_name='lt_4.lateral_force_iso'
+VARIABLE/1225
+, FUNCTION = USER(918, 1010, 39)\
+, ROUTINE = abgTire::var918
+!
+!                   adams_view_name='lt_4.vertical_force_iso'
+VARIABLE/1226
+, FUNCTION = USER(918, 1010, 40)\
+, ROUTINE = abgTire::var918
+!
+!                 adams_view_name='lt_4.overturning_moment_iso'
+VARIABLE/1227
+, FUNCTION = USER(918, 1010, 41)\
+, ROUTINE = abgTire::var918
+!
+!                 adams_view_name='lt_4.rolling_resistance_iso'
+VARIABLE/1228
+, FUNCTION = USER(918, 1010, 42)\
+, ROUTINE = abgTire::var918
+!
+!                   adams_view_name='lt_4.aligning_torque_iso'
+VARIABLE/1229
+, FUNCTION = USER(918, 1010, 43)\
+, ROUTINE = abgTire::var918
+!
+! Tire input array
+!                    adams_view_name='lt_3.tire_input_array'
+ARRAY/1022
+, U
+, SIZE = 17
+, VARIABLES = 1174, 1175, 1176, 1177, 1178, 1179, 1180, 1181, 1182, 1183, 1184
+, 1185, 1186, 1187, 1188, 1189, 1190
+!
+! Tire output array (forces and moments)
+!                    adams_view_name='lt_3.tire_output_array'
+ARRAY/1023
+, Y
+!
+! Tire states array
+!                    adams_view_name='lt_3.tire_state_array'
+ARRAY/1024
+, X
+!
+!Input array for tire gfosub
+! p1 : id of ARRAY holding tire states
+! p2 : number of tire states
+! p3 : Side flag (0=left, 1=right)
+! p4 : id of STRING statement holding role
+! p5 : id of STRING statement holding tire property file name
+! p6 : id of STRING statement holding simulation name
+! p7 : id of STRING statement holding road property file name
+! p8 : id of STRING statement holding contact type
+! p9 : Tire radius for suspension analysis when a rigid wheel is used
+! p10: id DIFF
+! p11: ISWITCH (0=static tire, 1=dynamic tire)
+! p12: id of ARRAY holding scaling and drift factors
+! p13: id of ARRAY holding user parameters
+! p14: id of jprim to lock wheel rotation (for steady state analysis)
+! p15: RigK
+! p16: initial speed
+! p17: id of ARRAY holding doe parameters
+! p18: id of wheel part
+!                       adams_view_name='lt_3.input_array'
+ARRAY/1025
+, IC
+, SIZE = 18
+, NUMBERS = 1024, 2, 0, 18, 16, 20, 17, 19, 430, 0, 1, 1026, 1027, 0, 0, 0, 1028
+, 1030
+!
+!Scaling array for tire
+! p1 : Unloaded Radius Offset
+! p2 : Lateral Force Scale Factor
+! p3 : Overturning Moment Scale Factor
+! p4 : Aligning Torque Scale Factor
+! p5 : Plysteer Force
+! p6 : Conicity Force
+! p7 : Plysteer Torque
+! p8 : Conicity Torque
+!                      adams_view_name='lt_3.scales_array'
+ARRAY/1026
+, IC
+, SIZE = 8
+, NUMBERS = 0, 1, 1, 1, 0, 0, 0, 0
+!
+!User parameters for tire
+!                       adams_view_name='lt_3.user_array'
+ARRAY/1027
+, IC
+, SIZE = 10
+, NUMBERS = 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+!
+!DOE parameters for tire
+!                        adams_view_name='lt_3.doe_array'
+ARRAY/1028
+, IC
+, SIZE = 30
+, NUMBERS = 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+, 0, 0, 0, 0, 0, 0, 0
+!
+! Tire input array
+!                    adams_view_name='lt_4.tire_input_array'
+ARRAY/1029
+, U
+, SIZE = 17
+, VARIABLES = 1202, 1203, 1204, 1205, 1206, 1207, 1208, 1209, 1210, 1211, 1212
+, 1213, 1214, 1215, 1216, 1217, 1218
+!
+! Tire output array (forces and moments)
+!                    adams_view_name='lt_4.tire_output_array'
+ARRAY/1030
+, Y
+!
+! Tire states array
+!                    adams_view_name='lt_4.tire_state_array'
+ARRAY/1031
+, X
+!
+!Input array for tire gfosub
+! p1 : id of ARRAY holding tire states
+! p2 : number of tire states
+! p3 : Side flag (0=left, 1=right)
+! p4 : id of STRING statement holding role
+! p5 : id of STRING statement holding tire property file name
+! p6 : id of STRING statement holding simulation name
+! p7 : id of STRING statement holding road property file name
+! p8 : id of STRING statement holding contact type
+! p9 : Tire radius for suspension analysis when a rigid wheel is used
+! p10: id DIFF
+! p11: ISWITCH (0=static tire, 1=dynamic tire)
+! p12: id of ARRAY holding scaling and drift factors
+! p13: id of ARRAY holding user parameters
+! p14: id of jprim to lock wheel rotation (for steady state analysis)
+! p15: RigK
+! p16: initial speed
+! p17: id of ARRAY holding doe parameters
+! p18: id of wheel part
+!                       adams_view_name='lt_4.input_array'
+ARRAY/1032
+, IC
+, SIZE = 18
+, NUMBERS = 1031, 2, 0, 23, 21, 25, 22, 24, 430, 0, 1, 1033, 1034, 0, 0, 0, 1035
+, 1032
+!
+!Scaling array for tire
+! p1 : Unloaded Radius Offset
+! p2 : Lateral Force Scale Factor
+! p3 : Overturning Moment Scale Factor
+! p4 : Aligning Torque Scale Factor
+! p5 : Plysteer Force
+! p6 : Conicity Force
+! p7 : Plysteer Torque
+! p8 : Conicity Torque
+!                      adams_view_name='lt_4.scales_array'
+ARRAY/1033
+, IC
+, SIZE = 8
+, NUMBERS = 0, 1, 1, 1, 0, 0, 0, 0
+!
+!User parameters for tire
+!                       adams_view_name='lt_4.user_array'
+ARRAY/1034
+, IC
+, SIZE = 10
+, NUMBERS = 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+!
+!DOE parameters for tire
+!                        adams_view_name='lt_4.doe_array'
+ARRAY/1035
+, IC
+, SIZE = 30
+, NUMBERS = 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+, 0, 0, 0, 0, 0, 0, 0
+!
+!--------------------------------- EQUATIONS -----------------------------------
+!
+!                        adams_view_name='lt_3.tire_gse'
+GSE/1004
+, NS = 3
+, NO = 0
+, X = 1024
+, XXFLAG = USER
+, U = 1022
+, Y = 1023
+, XUFLAG = USER
+, YUFLAG = USER
+, YXFLAG = USER
+, FUNCTION = USER(908, 1008, 1025)\
+, ROUTINE = abgTire::gse908, abgTire::sti_gsexx908, abgTire::sti_gsexu908
+, abgTire::sti_gseyx908, abgTire::sti_gseyu908
+!
+!                        adams_view_name='lt_4.tire_gse'
+GSE/1005
+, NS = 3
+, NO = 0
+, X = 1031
+, XXFLAG = USER
+, U = 1029
+, Y = 1030
+, XUFLAG = USER
+, YUFLAG = USER
+, YXFLAG = USER
+, FUNCTION = USER(908, 1010, 1032)\
+, ROUTINE = abgTire::gse908, abgTire::sti_gsexx908, abgTire::sti_gsexu908
+, abgTire::sti_gseyx908, abgTire::sti_gseyu908
+!
+!----------------------------------- OUTPUT ------------------------------------
+!
+!                     adams_view_name='lt_3.radius_request'
+REQUEST/1013
+, COMMENT = tire defl. - loaded and effective rolling radius - rot. velocity
+, CUNITS = "no_units", "length", "length", "length", "no_units"
+, "angular_velocity", "no_units", "no_units"
+, CNAMES = "", "tire_deflection", "loaded_radius", "rolling_radius", ""
+, "rotational_velocity", "", ""
+, RESULTS_NAME = tire_rolling_states
+, FUNCTION = USER(902, 23, 1008)\
+, ROUTINE = abgTire::req902
+!
+!                 adams_view_name='lt_3.kinematics_request_ISO'
+REQUEST/1014
+, COMMENT = tire slip and inclination in ISO coordinate system
+, CUNITS = "no_units", "no_units", "angle", "angle", "no_units", "no_units"
+, "no_units", "no_units"
+, CNAMES = "", "longitudinal_slip", "lateral_slip", "inclination_angle", "", ""
+, "", ""
+, RESULTS_NAME = tire_kinematics
+, FUNCTION = USER(902, 2, 1008)\
+, ROUTINE = abgTire::req902
+!
+!                   adams_view_name='lt_3.forces_request_ISO'
+REQUEST/1015
+, COMMENT = tire contact forces in ISO coordinate system
+, CUNITS = "no_units", "force", "force", "force", "no_units", "torque", "torque"
+, "torque"
+, CNAMES = "", "longitudinal", "lateral", "normal", "", "overturning_moment"
+, "rolling_resistance", "aligning_torque"
+, RESULTS_NAME = tire_forces
+, FUNCTION = USER(902, 3, 1008)\
+, ROUTINE = abgTire::req902
+!
+!                   adams_view_name='lt_3.hub_forces_request'
+REQUEST/1016
+, COMMENT = forces on hub wrt to road reference marker
+, CUNITS = "no_units", "force", "force", "force", "no_units", "torque", "torque"
+, "torque"
+, CNAMES = "", "longitudinal", "lateral", "normal", "", "overturning_moment"
+, "rolling_resistance", "aligning_torque"
+, RESULTS_NAME = tire_hub_forces
+, FUNCTION = USER(902, 6, 1008)\
+, ROUTINE = abgTire::req902
+!
+!                     adams_view_name='lt_4.radius_request'
+REQUEST/1017
+, COMMENT = tire defl. - loaded and effective rolling radius - rot. velocity
+, CUNITS = "no_units", "length", "length", "length", "no_units"
+, "angular_velocity", "no_units", "no_units"
+, CNAMES = "", "tire_deflection", "loaded_radius", "rolling_radius", ""
+, "rotational_velocity", "", ""
+, RESULTS_NAME = tire_rolling_states
+, FUNCTION = USER(902, 23, 1010)\
+, ROUTINE = abgTire::req902
+!
+!                 adams_view_name='lt_4.kinematics_request_ISO'
+REQUEST/1018
+, COMMENT = tire slip and inclination in ISO coordinate system
+, CUNITS = "no_units", "no_units", "angle", "angle", "no_units", "no_units"
+, "no_units", "no_units"
+, CNAMES = "", "longitudinal_slip", "lateral_slip", "inclination_angle", "", ""
+, "", ""
+, RESULTS_NAME = tire_kinematics
+, FUNCTION = USER(902, 2, 1010)\
+, ROUTINE = abgTire::req902
+!
+!                   adams_view_name='lt_4.forces_request_ISO'
+REQUEST/1019
+, COMMENT = tire contact forces in ISO coordinate system
+, CUNITS = "no_units", "force", "force", "force", "no_units", "torque", "torque"
+, "torque"
+, CNAMES = "", "longitudinal", "lateral", "normal", "", "overturning_moment"
+, "rolling_resistance", "aligning_torque"
+, RESULTS_NAME = tire_forces
+, FUNCTION = USER(902, 3, 1010)\
+, ROUTINE = abgTire::req902
+!
+!                   adams_view_name='lt_4.hub_forces_request'
+REQUEST/1020
+, COMMENT = forces on hub wrt to road reference marker
+, CUNITS = "no_units", "force", "force", "force", "no_units", "torque", "torque"
+, "torque"
+, CNAMES = "", "longitudinal", "lateral", "normal", "", "overturning_moment"
+, "rolling_resistance", "aligning_torque"
+, RESULTS_NAME = tire_hub_forces
+, FUNCTION = USER(902, 6, 1010)\
+, ROUTINE = abgTire::req902
+!
+!----------------------------- ANALYSIS SETTINGS -------------------------------
+!
+INTEGRATOR/
+, GSTIFF
+!
+OUTPUT/
+, REQSAVE
+, GRSAVE
+!
+RESULTS/
+, XRF
+!
+END

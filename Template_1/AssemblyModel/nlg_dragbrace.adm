@@ -1,0 +1,61 @@
+ADAMS/Aircraft template
+!
+!-------------------------------- SYSTEM UNITS ---------------------------------
+!
+UNITS/
+, FORCE = NEWTON
+, MASS = KILOGRAM
+, LENGTH = METER
+, TIME = SECOND
+!
+!----------------------------------- PARTS -------------------------------------
+!
+!----------------------------------- Ground ------------------------------------
+!
+!                            adams_view_name='ground'
+PART/1
+, GROUND
+!
+!------------------------------------ Part -------------------------------------
+!
+!                        adams_view_name='ges_dragbrace'
+PART/33
+, QG = 6.967855, 0, 1.31953
+, REULER = 270D, 120.4532239D, 90D
+, MASS = 27.37266904
+, CM = 301
+, IM = 302
+, IP = 3.481154018, 3.481154018, 0.0353195023
+!
+!                              adams_view_name='cm'
+MARKER/301
+, PART = 33
+!
+!                        adams_view_name='inertia_frame'
+MARKER/302
+, PART = 33
+!
+!                           adams_view_name='gralin_1'
+MARKER/303
+, PART = 33
+, QP = -4.585221092E-13, 0, -0.5988736811
+!
+!                    adams_view_name='gralin_dragbrace_geom'
+GRAPHICS/85
+, CYLINDER
+, CM = 303
+, LENGTH = 1.197747362
+, SIDES = 15
+, RADIUS = 0.0508
+, SEG = 15
+!
+!----------------------------- ANALYSIS SETTINGS -------------------------------
+!
+OUTPUT/
+, REQSAVE
+, GRSAVE
+!
+RESULTS/
+, XRF
+!
+END

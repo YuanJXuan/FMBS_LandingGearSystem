@@ -1,0 +1,114 @@
+ADAMS/Aircraft template
+!
+!-------------------------------- SYSTEM UNITS ---------------------------------
+!
+UNITS/
+, FORCE = NEWTON
+, MASS = KILOGRAM
+, LENGTH = METER
+, TIME = SECOND
+!
+!----------------------------------- PARTS -------------------------------------
+!
+!----------------------------------- Ground ------------------------------------
+!
+!                            adams_view_name='ground'
+PART/1
+, GROUND
+!
+!                            adams_view_name='zdt_1'
+MARKER/461
+, PART = 1
+, QP = 5.918725026, 0.0125840225, 0.8
+, REULER = 303.9027984D, 90D, 90D
+!
+!                            adams_view_name='zdt_2'
+MARKER/462
+, PART = 1
+, QP = 5.779287538, -0.0811239662, 0.8
+, REULER = 303.9027984D, 90D, 90D
+!
+!------------------------------------ Part -------------------------------------
+!
+!                             adams_view_name='hsg'
+PART/47
+, MASS = 6.642530225
+, CM = 473
+, IP = 0.1743952027, 0.1743952027, 0.0016074923
+!
+!                          adams_view_name='gralin_463'
+MARKER/463
+, PART = 47
+, QP = 6.1976, 0.2, 0.8
+, REULER = 303.9027984D, 90D, 90D
+!
+!                          adams_view_name='MARKER_469'
+MARKER/469
+, PART = 47
+, QP = 5.849006282, -0.0342699719, 0.8
+, REULER = 303.9027984D, 90D, 90D
+!
+!                              adams_view_name='cm'
+MARKER/473
+, PART = 47
+, QP = 5.965204188, 0.0438200188, 0.8
+, REULER = 303.9027984D, 90D, 89.86311189D
+!
+!                         adams_view_name='CYLINDER_213'
+GRAPHICS/213
+, CYLINDER
+, CM = 463
+, LENGTH = 0.56
+, RADIUS = 0.022
+!
+!------------------------------------ Part -------------------------------------
+!
+!                             adams_view_name='zdt'
+PART/48
+, MASS = 7.262865693
+, CM = 474
+, IP = 0.0202851839, 0.0202851839, 0.0064058475
+!
+!                          adams_view_name='gralin_464'
+MARKER/464
+, PART = 48
+, QP = 5.918725026, 0.0125840225, 0.8
+, REULER = 303.9027984D, 90D, 0D
+!
+!                          adams_view_name='MARKER_470'
+MARKER/470
+, PART = 48
+, QP = 5.849006282, -0.0342699719, 0.8
+, REULER = 303.9027984D, 90D, 90D
+!
+!                              adams_view_name='cm'
+MARKER/474
+, PART = 48
+, QP = 5.849006282, -0.0342699719, 0.8
+, REULER = 123.9027984D, 90D, 34.46416355D
+!
+!                         adams_view_name='CYLINDER_214'
+GRAPHICS/214
+, CYLINDER
+, CM = 464
+, LENGTH = 0.168
+, RADIUS = 0.042
+!
+!-------------------------------- CONSTRAINTS ----------------------------------
+!
+!                           adams_view_name='hsg_zdt'
+JOINT/66
+, TRANSLATIONAL
+, I = 469
+, J = 470
+!
+!----------------------------- ANALYSIS SETTINGS -------------------------------
+!
+OUTPUT/
+, REQSAVE
+, GRSAVE
+!
+RESULTS/
+, XRF
+!
+END

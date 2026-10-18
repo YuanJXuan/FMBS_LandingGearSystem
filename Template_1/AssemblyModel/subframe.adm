@@ -1,0 +1,77 @@
+ADAMS/Aircraft template
+!
+!-------------------------------- SYSTEM UNITS ---------------------------------
+!
+UNITS/
+, FORCE = NEWTON
+, MASS = KILOGRAM
+, LENGTH = METER
+, TIME = SECOND
+!
+!----------------------------------- PARTS -------------------------------------
+!
+!----------------------------------- Ground ------------------------------------
+!
+!                            adams_view_name='ground'
+PART/1
+, GROUND
+!
+!                            adams_view_name='origo'
+MARKER/1
+, PART = 1
+!
+!------------------------------------ Part -------------------------------------
+!
+!Dummy for communicators
+!                           adams_view_name='_cv_part'
+PART/2
+, CM = 300
+, IP = 0, 0, 0
+!
+!Dummy for communicators
+!                            adams_view_name='marker'
+MARKER/300
+, PART = 2
+!
+!------------------------------------ Part -------------------------------------
+!
+!                           adams_view_name='PART_46'
+PART/46
+, QG = -0.92679, 0, 0.5
+, MASS = 34246.22394
+, CM = 438
+, IP = 1.307070096E+05, 2.307070095E+05, 1.307070095E+05
+!
+!                          adams_view_name='MARKER_433'
+MARKER/433
+, PART = 46
+, QP = 11.55019496, 0, 2.128247797
+!
+!                              adams_view_name='cm'
+MARKER/438
+, PART = 46
+, QP = 11.55019496, 0, 2.128247797
+!
+!                        adams_view_name='ELLIPSOID_156'
+GRAPHICS/150
+, ELLIPSOID
+, CM = 433
+, XSCALE = 0.2
+, YSCALE = 0.2
+, ZSCALE = 0.2
+!
+!------------------------- GRAVITATIONAL ACCELERATION --------------------------
+!
+ACCGRAV/
+, KGRAV = -9.81
+!
+!----------------------------- ANALYSIS SETTINGS -------------------------------
+!
+OUTPUT/
+, REQSAVE
+, GRSAVE
+!
+RESULTS/
+, XRF
+!
+END

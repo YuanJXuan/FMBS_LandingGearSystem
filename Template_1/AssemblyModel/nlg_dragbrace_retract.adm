@@ -1,0 +1,155 @@
+ADAMS/Aircraft template
+!
+!-------------------------------- SYSTEM UNITS ---------------------------------
+!
+UNITS/
+, FORCE = NEWTON
+, MASS = KILOGRAM
+, LENGTH = MILLIMETER
+, TIME = SECOND
+!
+!----------------------------------- PARTS -------------------------------------
+!
+!----------------------------------- Ground ------------------------------------
+!
+!                            adams_view_name='ground'
+PART/1
+, GROUND
+!
+!------------------------------------ Part -------------------------------------
+!
+!                          adams_view_name='ges_sf_rod'
+PART/5
+, MASS = 17.05113786
+, CM = 76
+, IP = 1.205897321E+06, 1.205897321E+06, 6447.461502
+!
+!                          adams_view_name='gralin_25'
+MARKER/3
+, PART = 5
+, QP = 6434.359135, 0, 1005.863305
+, REULER = 90D, 59.54677609D, 270D
+!
+!                              adams_view_name='cm'
+MARKER/76
+, PART = 5
+, QP = 6830.899019, 0, 1239.007296
+, REULER = 90D, 59.54677609D, 0D
+!
+!                          adams_view_name='MARKER_84'
+MARKER/84
+, PART = 5
+, QP = 6830.899019, 0, 1239.007296
+, REULER = 90D, 59.54677609D, 0D
+!
+!                      adams_view_name='MARKER_stopper_rod'
+MARKER/86
+, PART = 5
+, QP = 6434.359135, 0, 1005.863305
+!
+!                          adams_view_name='MARKER_88'
+MARKER/88
+, PART = 5
+, QP = 6434.359135, 0, 1005.863305
+!
+!                          adams_view_name='MARKER_96'
+MARKER/96
+, PART = 5
+, QP = 6434.359135, 0, 1005.863305
+!
+!                          adams_view_name='MARKER_101'
+MARKER/101
+, PART = 5
+, QP = 6434.359135, 0, 1005.863305
+!
+!                         adams_view_name='CYLINDER_30'
+GRAPHICS/30
+, CYLINDER
+, CM = 3
+, RANGLE = 360D
+, LENGTH = 920
+, RADIUS = 27.5
+!
+!------------------------------------ Part -------------------------------------
+!
+!                       adams_view_name='ges_sf_actuator'
+PART/7
+, QG = 6967.855, 0, 1319.53
+, REULER = 270D, 120.4532239D, 90D
+, MASS = 70.48530269
+, CM = 21
+, IP = 7.781828929E+06, 7.781828929E+06, 88327.6227
+!
+!                              adams_view_name='cm'
+MARKER/21
+, PART = 7
+, QP = -2.658928865E-08, -8.109401553E-09, -25
+!
+!                        adams_view_name='inertia_frame'
+MARKER/22
+, PART = 7
+, QP = -2.658890469E-08, -8.109401553E-09, -25
+!
+!                           adams_view_name='gralin_1'
+MARKER/23
+, PART = 7
+, QP = -2.658928633E-08, -8.10940573E-09, -598.8736811
+!
+!                          adams_view_name='MARKER_85'
+MARKER/85
+, PART = 7
+, QP = 1.345146217E-09, 0, 158.8736811
+, REULER = 90D, 180D, 0D
+!
+!                       adams_view_name='stopper_actuator'
+MARKER/87
+, PART = 7
+, QP = 2.202682481E-09, 0, 618.8736811
+, REULER = 90D, 120.4532239D, 270D
+!
+!                          adams_view_name='MARKER_89'
+MARKER/89
+, PART = 7
+, QP = 2.202682481E-09, 0, 618.8736811
+, REULER = 90D, 120.4532239D, 270D
+!
+!                          adams_view_name='MARKER_97'
+MARKER/97
+, PART = 7
+, QP = -4.59188243E-10, 0, -598.8736811
+, REULER = 90D, 120.4532239D, 270D
+!
+!                          adams_view_name='MARKER_100'
+MARKER/100
+, PART = 7
+, QP = 2.202682481E-09, 0, 618.8736811
+, REULER = 90D, 120.4532239D, 270D
+!
+!                    adams_view_name='gralin_dragbrace_geom'
+GRAPHICS/32
+, CYLINDER
+, CM = 23
+, RANGLE = 360D
+, LENGTH = 1147.747362
+, SIDES = 15
+, RADIUS = 50.8
+, SEG = 15
+!
+!-------------------------------- CONSTRAINTS ----------------------------------
+!
+!                         adams_view_name='joscly_ac_rd'
+JOINT/13
+, CYLINDRICAL
+, I = 84
+, J = 85
+!
+!----------------------------- ANALYSIS SETTINGS -------------------------------
+!
+OUTPUT/
+, REQSAVE
+, GRSAVE
+!
+RESULTS/
+, XRF
+!
+END

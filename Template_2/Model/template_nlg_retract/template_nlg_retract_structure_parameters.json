@@ -1,0 +1,389 @@
+{
+  "version": 3,
+  "coaxial": [
+    {
+      "id": "dragbrace_actuator_axis",
+      "start": "chengganwaitong.MARKER_5cg",
+      "end": "chengganhuosaigan.MARKER_4cg",
+      "axis": "z",
+      "markers": [
+        {
+          "path": "chengganwaitong.cm",
+          "cylinder": "chengganwaitong.CYLINDER_16",
+          "distance_from": "start",
+          "align_orientation": true
+        },
+        {
+          "path": "chengganhuosaigan.cm",
+          "cylinder": "chengganhuosaigan.CYLINDER_17",
+          "distance_from": "end",
+          "reverse": true,
+          "align_orientation": true
+        },
+        {
+          "path": "chengganwaitong.MARKER_136",
+          "fraction": 0.41235841950625607
+        },
+        {
+          "path": "chengganhuosaigan.MARKER_137",
+          "fraction": 0.41235841950625607
+        }
+      ],
+      "recompute": [
+        "chengganhuosaigan_waitong",
+        "chengganwaitong_qianqizhiliang",
+        "JOINT_24"
+      ]
+    },
+    {
+      "id": "retract_actuator_axis",
+      "start": "shoufangwaitong.MARKER_8a",
+      "end": "shoufanghuosaigan.MARKER_6g",
+      "axis": "z",
+      "markers": [
+        {
+          "path": "shoufangwaitong.cm",
+          "cylinder": "shoufangwaitong.CYLINDER_15",
+          "distance_from": "start",
+          "align_orientation": true
+        },
+        {
+          "path": "shoufanghuosaigan.cm",
+          "cylinder": "shoufanghuosaigan.CYLINDER_18",
+          "distance_from": "end",
+          "reverse": true,
+          "align_orientation": true
+        },
+        {
+          "path": "shoufangwaitong.MARKER_132",
+          "fraction": 0.42099292631541585
+        },
+        {
+          "path": "shoufanghuosaigan.MARKER_133",
+          "fraction": 0.42099292631541585
+        }
+      ],
+      "recompute": ["JOINT_22", "JOINT_23", "JOINT_25"]
+    },
+    {
+      "id": "shock_strut_axis",
+      "start": "waitong.MARKER_OL",
+      "end": "huosaigan.MARKER_M",
+      "axis": "z",
+      "markers": [
+        {
+          "path": "waitong.cm",
+          "cylinder": "waitong.CYLINDER_11",
+          "distance_from": "start",
+          "align_orientation": true
+        },
+        {
+          "path": "huosaigan.cm",
+          "cylinder": "huosaigan.CYLINDER_12",
+          "distance_from": "end",
+          "reverse": true,
+          "align_orientation": true
+        },
+        {
+          "path": "waitong.MARKER_58",
+          "fraction": 0.7026022304832714
+        },
+        {
+          "path": "huosaigan.MARKER_59",
+          "fraction": 0.7026022304832714
+        },
+        {"path": "waitong.MARKER_79", "distance": 757.5, "distance_from": "start"},
+        {"path": "taotong.MARKER_80", "distance": 757.5, "distance_from": "start"},
+        {"path": "taotong.MARKER_15", "distance": 680.0, "distance_from": "start"},
+        {"path": "taotong.cm", "distance": 757.5, "distance_from": "start"},
+        {"path": "huosaigan.MARKER_69", "distance": 800.0, "distance_from": "end"},
+        {"path": "waitong.MARKER_140", "distance": 545.0, "distance_from": "start", "align_orientation": false},
+        {"path": "waitong.MARKER_141", "distance": 545.0, "distance_from": "start", "align_orientation": false}
+      ],
+      "coincident_pairs": [
+        ["waitong.MARKER_58", "huosaigan.MARKER_59"],
+        ["waitong.MARKER_79", "taotong.MARKER_80"],
+        ["waitong.MARKER_140", "waitong.MARKER_141"]
+      ],
+      "recompute": [
+        "waitong_huosaigan",
+        "xianiulibi_huosaigan",
+        "waitong_taotong",
+        "chengganhuosaigan_waitong",
+        "lunzhou_huosaigan",
+        "JOINT_19",
+        "JOINT_25"
+      ]
+    },
+    {
+      "id": "wheel_axle_axis",
+      "start": "lunzhou.MARKER_K2",
+      "end": "lunzhou.MARKER_K1",
+      "axis": "z",
+      "align_end_orientation": false,
+      "markers": [
+        {"path": "lunzhou.MARKER_K", "fraction": 0.5},
+        {"path": "lunzhou.cm", "fraction": 0.5},
+        {"path": "huosaigan.MARKER_97", "fraction": 0.5},
+        {"path": "lunzhou.MARKER_98", "fraction": 0.5}
+      ],
+      "length_targets": [{"path": "lunzhou.CYLINDER_20"}],
+      "coincident_pairs": [["huosaigan.MARKER_97", "lunzhou.MARKER_98"]],
+      "recompute": ["zuolunxuanzhuan", "youlunxuanzhuan", "lunzhou_huosaigan"]
+    },
+    {
+      "id": "shaft_axis",
+      "start": "zhuanzhou.MARKER_A",
+      "end": "zhuanzhou.MARKER_B",
+      "axis": "z",
+      "align_start_orientation": false,
+      "align_end_orientation": false,
+      "markers": [
+        {"path": "waitong.MARKER_126", "fraction": 0.5},
+        {"path": "qianqizhiliang.MARKER_127", "fraction": 0.5}
+      ],
+      "coincident_pairs": [["waitong.MARKER_126", "qianqizhiliang.MARKER_127"]],
+      "recompute": ["JOINT_19"]
+    },
+    {
+      "id": "upper_torque_arm_axis",
+      "start": "shangniulibi.MARKER_70",
+      "end": "shangniulibi.MARKER_74",
+      "axis": "z",
+      "align_end_orientation": false,
+      "markers": [{"path": "shangniulibi.cm", "fraction": 0.5}],
+      "length_targets": [{"path": "shangniulibi.CYLINDER_48"}],
+      "coincident_pairs": [
+        ["taotong.MARKER_72", "shangniulibi.MARKER_73"],
+        ["shangniulibi.MARKER_75", "xianiulibi.MARKER_76"]
+      ],
+      "recompute": ["taotong_shangniulibi", "shangniulibi_xianiulibi"]
+    },
+    {
+      "id": "lower_torque_arm_axis",
+      "start": "xianiulibi.MARKER_77",
+      "end": "shangniulibi.MARKER_74",
+      "axis": "z",
+      "align_start_orientation": false,
+      "align_end_orientation": false,
+      "markers": [
+        {"path": "xianiulibi.MARKER_71", "fraction": 0.0},
+        {"path": "xianiulibi.cm", "fraction": 0.5}
+      ],
+      "length_targets": [{"path": "xianiulibi.CYLINDER_49"}],
+      "coincident_pairs": [["xianiulibi.MARKER_77", "huosaigan.MARKER_78"]],
+      "recompute": ["xianiulibi_huosaigan", "shangniulibi_xianiulibi"]
+    }
+  ],
+  "parameters": [
+    {
+      "id": "right_wheel_center",
+      "label": "右轮心",
+      "description": "同步右轮轴Marker、右轮胎零件和右轮旋转副。",
+      "driver": "lunzhou.MARKER_K2",
+      "axes": ["x", "y", "z"],
+      "table_only": true,
+      "followers": [
+        {
+          "path": "lunzhou.MARKER_57",
+          "operation": "copy",
+          "axes": ["x", "y", "z"]
+        },
+        {
+          "path": "lt_2.wheel_part",
+          "target_type": "part",
+          "operation": "copy",
+          "axes": ["x", "y", "z"]
+        }
+      ],
+      "recompute": ["youlunxuanzhuan"]
+    },
+    {
+      "id": "left_wheel_center",
+      "label": "左轮心",
+      "description": "同步左轮轴Marker、左轮胎零件和左轮旋转副。",
+      "driver": "lunzhou.MARKER_K1",
+      "axes": ["x", "y", "z"],
+      "table_only": true,
+      "followers": [
+        {
+          "path": "lunzhou.MARKER_43",
+          "operation": "copy",
+          "axes": ["x", "y", "z"]
+        },
+        {
+          "path": "lt_1.wheel_part",
+          "target_type": "part",
+          "operation": "copy",
+          "axes": ["x", "y", "z"]
+        }
+      ],
+      "recompute": ["zuolunxuanzhuan"]
+    },
+    {
+      "id": "dragbrace_rod_lower",
+      "label": "撑杆活塞杆下端点",
+      "description": "同步撑杆活塞杆与外筒球副两侧Marker。",
+      "driver": "chengganhuosaigan.MARKER_4cg",
+      "axes": ["x", "y", "z"],
+      "table_only": true,
+      "followers": [
+        {
+          "path": "chengganhuosaigan.MARKER_81",
+          "operation": "copy",
+          "axes": ["x", "y", "z"]
+        },
+        {
+          "path": "waitong.MARKER_82",
+          "operation": "copy",
+          "axes": ["x", "y", "z"]
+        }
+      ],
+      "recompute": ["chengganhuosaigan_waitong"]
+    },
+    {
+      "id": "dragbrace_cylinder_upper",
+      "label": "撑杆外筒上端点",
+      "description": "同步撑杆外筒与前起质量旋转副两侧Marker。",
+      "driver": "chengganwaitong.MARKER_5cg",
+      "axes": ["x", "y", "z"],
+      "table_only": true,
+      "followers": [
+        {
+          "path": "chengganwaitong.MARKER_92",
+          "operation": "copy",
+          "axes": ["x", "y", "z"]
+        },
+        {
+          "path": "qianqizhiliang.MARKER_93",
+          "operation": "copy",
+          "axes": ["x", "y", "z"]
+        }
+      ],
+      "recompute": ["chengganwaitong_qianqizhiliang"]
+    },
+    {
+      "id": "retract_rod_lower",
+      "label": "收放活塞杆下端点",
+      "description": "同步收放活塞杆与外筒旋转副两侧Marker。",
+      "driver": "shoufanghuosaigan.MARKER_6g",
+      "axes": ["x", "y", "z"],
+      "table_only": true,
+      "followers": [
+        {
+          "path": "shoufanghuosaigan.MARKER_138",
+          "operation": "copy",
+          "axes": ["x", "y", "z"]
+        },
+        {
+          "path": "waitong.MARKER_139",
+          "operation": "copy",
+          "axes": ["x", "y", "z"]
+        }
+      ],
+      "recompute": ["JOINT_25"]
+    },
+    {
+      "id": "retract_cylinder_upper",
+      "label": "收放外筒上端点",
+      "description": "同步收放外筒与前起质量旋转副两侧Marker。",
+      "driver": "shoufangwaitong.MARKER_8a",
+      "axes": ["x", "y", "z"],
+      "table_only": true,
+      "followers": [
+        {
+          "path": "shoufangwaitong.MARKER_134",
+          "operation": "copy",
+          "axes": ["x", "y", "z"]
+        },
+        {
+          "path": "qianqizhiliang.MARKER_135",
+          "operation": "copy",
+          "axes": ["x", "y", "z"]
+        }
+      ],
+      "recompute": ["JOINT_23"]
+    },
+    {
+      "id": "shock_rod_lower",
+      "label": "活塞杆下端点",
+      "description": "缓冲支柱活塞杆几何参考点。",
+      "driver": "huosaigan.MARKER_M",
+      "axes": ["x", "y", "z"],
+      "table_only": true
+    },
+    {
+      "id": "shock_cylinder_upper",
+      "label": "外筒上端点",
+      "description": "缓冲支柱外筒几何参考点。",
+      "driver": "waitong.MARKER_OL",
+      "axes": ["x", "y", "z"],
+      "table_only": true
+    },
+    {
+      "id": "shaft_left_end",
+      "label": "转轴左端点",
+      "description": "转轴左端几何参考点。",
+      "driver": "zhuanzhou.MARKER_B",
+      "axes": ["x", "y", "z"],
+      "table_only": true
+    },
+    {
+      "id": "shaft_right_end",
+      "label": "转轴右端点",
+      "description": "转轴右端几何参考点。",
+      "driver": "zhuanzhou.MARKER_A",
+      "axes": ["x", "y", "z"],
+      "table_only": true
+    },
+    {
+      "id": "upper_torque_arm_start",
+      "label": "上扭力臂端点",
+      "driver": "shangniulibi.MARKER_70",
+      "axes": ["x", "y", "z"],
+      "table_only": true,
+      "followers": [
+        {"path": "taotong.MARKER_72", "operation": "copy", "axes": ["x", "y", "z"]},
+        {"path": "shangniulibi.MARKER_73", "operation": "copy", "axes": ["x", "y", "z"]}
+      ],
+      "recompute": ["taotong_shangniulibi"]
+    },
+    {
+      "id": "torque_arm_elbow",
+      "label": "上下扭力臂连接点",
+      "driver": "shangniulibi.MARKER_74",
+      "axes": ["x", "y", "z"],
+      "table_only": true,
+      "followers": [
+        {"path": "shangniulibi.MARKER_75", "operation": "copy", "axes": ["x", "y", "z"]},
+        {"path": "xianiulibi.MARKER_76", "operation": "copy", "axes": ["x", "y", "z"]}
+      ],
+      "recompute": ["shangniulibi_xianiulibi"]
+    },
+    {
+      "id": "lower_torque_arm_end",
+      "label": "下扭力臂端点",
+      "driver": "xianiulibi.MARKER_77",
+      "axes": ["x", "y", "z"],
+      "table_only": true,
+      "followers": [
+        {"path": "huosaigan.MARKER_78", "operation": "copy", "axes": ["x", "y", "z"]}
+      ],
+      "recompute": ["xianiulibi_huosaigan"]
+    },
+    {
+      "id": "nose_mass_point",
+      "label": "前起质量点",
+      "description": "同步前起质量体质心及其与地面固定副的两侧Marker。",
+      "driver": "qianqizhiliang.MARKER_85",
+      "axes": ["x", "y", "z"],
+      "table_only": true,
+      "followers": [
+        {"path": "qianqizhiliang.cm", "operation": "copy", "axes": ["x", "y", "z"]},
+        {"path": "qianqizhiliang.MARKER_128", "operation": "copy", "axes": ["x", "y", "z"]},
+        {"path": "ground.MARKER_129", "operation": "copy", "axes": ["x", "y", "z"]}
+      ],
+      "recompute": ["JOINT_20"]
+    }
+  ]
+}
