@@ -148,11 +148,13 @@ class MarkerSchematicPanel(QWidget):
         self._large_view = None
         self._large_status = None
         self._image_key = None
+        self._model_title = "结构示意图"
         self.pixmap = QPixmap()
         layout = QVBoxLayout(self)
         layout.setContentsMargins(8, 8, 8, 8)
         header = QHBoxLayout()
-        header.addWidget(QLabel("前起落震示意图", self), 1)
+        self.titleLabel = QLabel(self._model_title, self)
+        header.addWidget(self.titleLabel, 1)
         self.enlargeButton = QPushButton("放大查看", self)
         self.enlargeButton.setAutoDefault(False)
         self.enlargeButton.clicked.connect(self.open_enlarged)
@@ -176,6 +178,10 @@ class MarkerSchematicPanel(QWidget):
                 raise ValueError("示意图无法读取或图片尺寸与点位配置不一致")
             self.pixmap = pixmap
             self._image_key = key
+        self._model_title = data["title"]
+        self.titleLabel.setText(self._model_title + "示意图")
+        if self._large_dialog is not None:
+            self._large_dialog.setWindowTitle(self._model_title + " · 示意图选点")
 
     def set_markers(self, markers, selected="", locked=False):
         self.view.set_state(self.pixmap, markers, selected, locked)
@@ -194,6 +200,8 @@ class MarkerSchematicPanel(QWidget):
         self.close_enlarged()
         self.pixmap = QPixmap()
         self._image_key = None
+        self._model_title = "结构示意图"
+        self.titleLabel.setText(self._model_title)
         self.set_markers([])
 
     def close_enlarged(self):
@@ -205,7 +213,7 @@ class MarkerSchematicPanel(QWidget):
             return
         if self._large_dialog is None:
             dialog = QDialog(self)
-            dialog.setWindowTitle("前起落震 · 示意图选点")
+            dialog.setWindowTitle(self._model_title + " · 示意图选点")
             dialog.setWindowFlags(dialog.windowFlags() | Qt.WindowStaysOnTopHint)
             layout = QVBoxLayout(dialog)
             self._large_view = MarkerSchematicView(dialog)

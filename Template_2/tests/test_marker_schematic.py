@@ -2,6 +2,7 @@
 import copy
 import ast
 import json
+import shutil
 import sys
 import tempfile
 import types
@@ -16,8 +17,10 @@ import MarkerSchematic as schematic
 
 
 class MarkerSchematicTests(unittest.TestCase):
+    case_model = "template_nlg_drop"
+
     def setUp(self):
-        self.folder = ROOT / "Model/template_nlg_drop"
+        self.folder = ROOT / "Model" / self.case_model
         self.data = schematic.load_schematic(str(self.folder))
         entries = InformationConfiguration.load_information_configuration(str(self.folder))["markers"]
         self.items = [dict(configuration_entry=e, path=e["target"], display=e["label"], node=object()) for e in entries]
@@ -33,7 +36,7 @@ class MarkerSchematicTests(unittest.TestCase):
     def test_renamed_model_and_flattened_runtime_path_use_configured_part(self):
         for item in self.items:
             item["configuration_entry"] = dict(item["configuration_entry"])
-            item["configuration_entry"]["target"] = item["configuration_entry"]["target"].replace("template_nlg_drop", "imported_copy")
+            item["configuration_entry"]["target"] = item["configuration_entry"]["target"].replace(self.case_model, "imported_copy")
             item["path"] = ".imported_copy.flattened_runtime_name"
         self.assertTrue(all(m["available"] for m in schematic.match_markers(self.data["markers"], self.items)))
         self.items[0]["configuration_entry"]["target"] = ".imported_copy.other_part.MARKER_K2"
@@ -48,9 +51,27 @@ class MarkerSchematicTests(unittest.TestCase):
         self.assertFalse(matched[1]["available"])
         self.assertEqual(0, matched[1]["index"])
 
-    def test_other_cases_do_not_inherit_drop_schematic(self):
-        self.assertIsNone(schematic.load_schematic(str(ROOT / "Model/template_nlg_retract")))
+    def test_other_cases_do_not_inherit_supported_schematics(self):
+        self.assertIsNone(schematic.load_schematic(str(ROOT / "Model/template_nlg_turn")))
         self.assertIsNone(schematic.load_schematic(str(ROOT / "Model")))
+
+    def test_case_identity_and_title_follow_its_own_resources(self):
+        self.assertEqual(self.case_model, self.data["model"])
+        self.assertEqual(schematic.SCHEMATIC_MODELS[self.case_model], self.data["title"])
+        self.assertTrue(all(m["target"].startswith("." + self.case_model + ".") for m in self.data["markers"]))
+        self.assertEqual(self.folder.resolve(), Path(self.data["image_path"]).parent)
+
+    def test_copy_to_renamed_directory_and_ambiguous_configuration(self):
+        with tempfile.TemporaryDirectory() as temp:
+            folder = Path(temp)
+            filename = schematic.SCHEMATIC_FILES[self.case_model]
+            shutil.copyfile(self.folder / filename, folder / filename)
+            shutil.copyfile(self.data["image_path"], folder / self.data["image"])
+            self.assertEqual(self.case_model, schematic.load_schematic(temp)["model"])
+            other_file = next(name for model, name in schematic.SCHEMATIC_FILES.items() if model != self.case_model)
+            (folder / other_file).write_text("{}", encoding="utf-8")
+            with self.assertRaisesRegex(ValueError, "多套示意图"):
+                schematic.load_schematic(temp)
 
     def test_point_and_badge_hit_testing_survives_resize_and_letterboxing(self):
         for size in ((240, 500), (360, 300), (1050, 790), (1448, 1086)):
@@ -83,18 +104,24 @@ class MarkerSchematicTests(unittest.TestCase):
                     data["markers"][0]["point_normalized"][0] = float("nan")
                 else:
                     data["model"] = "template_nlg_turn"
-                (folder / schematic.SCHEMATIC_FILE).write_text(json.dumps(data), encoding="utf-8")
+                (folder / schematic.SCHEMATIC_FILES[self.case_model]).write_text(json.dumps(data), encoding="utf-8")
                 with self.assertRaises(ValueError, msg=mutation):
                     schematic.load_schematic(str(folder))
+
+
+class RetractMarkerSchematicTests(MarkerSchematicTests):
+    case_model = "template_nlg_retract"
 
 
 class SchematicSelectionTests(unittest.TestCase):
     """Exercise the production selection handlers without pretending to render Qt."""
 
+    case_model = "template_nlg_drop"
+
     def setUp(self):
-        data = schematic.load_schematic(str(ROOT / "Model/template_nlg_drop"))
+        data = schematic.load_schematic(str(ROOT / "Model" / self.case_model))
         entries = InformationConfiguration.load_information_configuration(
-            str(ROOT / "Model/template_nlg_drop")
+            str(ROOT / "Model" / self.case_model)
         )["markers"]
         self.nodes = {entry["target"]: object() for entry in entries}
         scene = types.SimpleNamespace(getObject=lambda path: self.nodes.get(path))
@@ -173,6 +200,10 @@ class SchematicSelectionTests(unittest.TestCase):
         self.assertEqual("", self.dialog.xMarker.value)
         self.assertFalse(self.dialog.xMarker.enabled)
         self.assertEqual("", self.dialog.markerSchematicPanel.set_markers.call_args[0][1])
+
+
+class RetractSchematicSelectionTests(SchematicSelectionTests):
+    case_model = "template_nlg_retract"
 
 
 if __name__ == "__main__":

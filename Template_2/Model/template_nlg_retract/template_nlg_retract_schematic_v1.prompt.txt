@@ -1,0 +1,8 @@
+Edit the provided engineering schematic PNG for the FMBS nose landing gear retraction case.
+This is a precise text-localization edit of the attached existing diagram, NOT a new mechanical illustration.
+The source model template_nlg_retract has exactly the same initial 14 configured marker coordinates and relative part/marker paths as template_nlg_drop; the schematic represents the initial extended position. Preserve the mechanical drawing in both views, all 14 blue anchor dot locations, all numerical badges 01–14, all leader lines, background, font style, colors, layout and canvas dimensions/aspect ratio. Do not move, resize, add or remove any mechanical part or point. Do NOT depict a folded gear or introduce motion arrows.
+Make ONLY these two text replacements in the upper-left title block:
+1. Replace "前起落震 · 结构点位示意" with exactly "前起收放 · 结构点位示意".
+2. Replace "template_nlg_drop" with exactly "template_nlg_retract".
+Keep "侧向结构", "横向点位", and the footer "点位编号对应信息配置表 · 示意图非尺寸图" unchanged.
+Output a crisp PNG preserving the original 1448×1086 composition with white background. This will become a clickable point-selection background so positional fidelity of every dot and number is essential.

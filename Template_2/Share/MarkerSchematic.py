@@ -6,18 +6,32 @@ import math
 import os
 
 
-SCHEMATIC_FILE = "template_nlg_drop_schematic_v1.points.json"
+SCHEMATIC_MODELS = {
+    "template_nlg_drop": "前起落震",
+    "template_nlg_retract": "前起收放",
+}
+SCHEMATIC_FILES = {
+    model: "{}_schematic_v1.points.json".format(model)
+    for model in SCHEMATIC_MODELS
+}
 
 
 def load_schematic(model_dir):
-    """Only load the supported schematic from the active resource directory."""
+    """Load one supported model's schematic from its active resource directory."""
     folder = os.path.realpath(model_dir)
-    path = os.path.join(folder, SCHEMATIC_FILE)
-    if not os.path.isfile(path):
+    candidates = [
+        (model, os.path.join(folder, filename))
+        for model, filename in SCHEMATIC_FILES.items()
+        if os.path.isfile(os.path.join(folder, filename))
+    ]
+    if not candidates:
         return None
+    if len(candidates) != 1:
+        raise ValueError("当前模型目录内有多套示意图配置，无法唯一匹配")
+    expected_model, path = candidates[0]
     with open(path, "r", encoding="utf-8-sig") as stream:
         data = json.load(stream)
-    if data.get("version") != 1 or data.get("model") != "template_nlg_drop":
+    if data.get("version") != 1 or data.get("model") != expected_model:
         raise ValueError("示意图配置版本或模型不受支持")
     if data.get("coordinate_origin") != "top_left":
         raise ValueError("示意图坐标原点必须为左上角")
@@ -50,6 +64,7 @@ def load_schematic(model_dir):
             )):
                 raise ValueError("示意图点位 {} 的图片坐标无效".format(number))
     data["image_path"] = image_path
+    data["title"] = SCHEMATIC_MODELS[expected_model]
     return data
 
 

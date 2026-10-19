@@ -1,0 +1,413 @@
+{
+  "version": 1,
+  "model": "template_nlg_retract",
+  "image": "template_nlg_retract_schematic_v1.png",
+  "image_size": [
+    1448,
+    1086
+  ],
+  "coordinate_origin": "top_left",
+  "status": "connected_to_structure_tab",
+  "notes": [
+    "Numbering follows the information workbook at creation time; match runtime markers by target path, not row number.",
+    "Image positions are schematic illustration positions, not projections of model XYZ coordinates.",
+    "Scale the image with preserved aspect ratio and apply the same transform to hotspots.",
+    "Keep a minimum screen-space hit radius when scaling down; badges may be alternative hit targets.",
+    "Revalidate image positions if the PNG artwork is replaced.",
+    "Initial marker coordinates match the drop case; this schematic depicts the initial extended position, not the moving/retracted pose."
+  ],
+  "markers": [
+    {
+      "number": "01",
+      "label": "右轮心",
+      "target": ".template_nlg_retract.lunzhou.MARKER_K2",
+      "relative_target": "lunzhou.MARKER_K2",
+      "view": "transverse",
+      "point_px": [
+        1297.07,
+        898.31
+      ],
+      "point_normalized": [
+        0.895767,
+        0.827173
+      ],
+      "badge_px": [
+        1390,
+        877
+      ],
+      "badge_normalized": [
+        0.959945,
+        0.807551
+      ],
+      "configuration_world_coordinates_mm": [
+        4997.0,
+        300.0,
+        -1757.0
+      ]
+    },
+    {
+      "number": "02",
+      "label": "左轮心",
+      "target": ".template_nlg_retract.lunzhou.MARKER_K1",
+      "relative_target": "lunzhou.MARKER_K1",
+      "view": "transverse",
+      "point_px": [
+        1044.83,
+        898.33
+      ],
+      "point_normalized": [
+        0.721568,
+        0.827192
+      ],
+      "badge_px": [
+        956,
+        877
+      ],
+      "badge_normalized": [
+        0.660221,
+        0.807551
+      ],
+      "configuration_world_coordinates_mm": [
+        4997.0,
+        -300.0,
+        -1757.0
+      ]
+    },
+    {
+      "number": "03",
+      "label": "撑杆活塞杆下端点",
+      "target": ".template_nlg_retract.chengganhuosaigan.MARKER_4cg",
+      "relative_target": "chengganhuosaigan.MARKER_4cg",
+      "view": "side",
+      "point_px": [
+        355.11,
+        542.19
+      ],
+      "point_normalized": [
+        0.245242,
+        0.499254
+      ],
+      "badge_px": [
+        429,
+        580
+      ],
+      "badge_normalized": [
+        0.296271,
+        0.53407
+      ],
+      "configuration_world_coordinates_mm": [
+        5152.0,
+        0.0,
+        -1003.0
+      ]
+    },
+    {
+      "number": "04",
+      "label": "撑杆外筒上端点",
+      "target": ".template_nlg_retract.chengganwaitong.MARKER_5cg",
+      "relative_target": "chengganwaitong.MARKER_5cg",
+      "view": "side",
+      "point_px": [
+        803.31,
+        395.9
+      ],
+      "point_normalized": [
+        0.554772,
+        0.364549
+      ],
+      "badge_px": [
+        862,
+        338
+      ],
+      "badge_normalized": [
+        0.595304,
+        0.311234
+      ],
+      "configuration_world_coordinates_mm": [
+        6122.0,
+        0.0,
+        -503.0
+      ]
+    },
+    {
+      "number": "05",
+      "label": "收放活塞杆下端点",
+      "target": ".template_nlg_retract.shoufanghuosaigan.MARKER_6g",
+      "relative_target": "shoufanghuosaigan.MARKER_6g",
+      "view": "side",
+      "point_px": [
+        337.6,
+        374.29
+      ],
+      "point_normalized": [
+        0.233149,
+        0.34465
+      ],
+      "badge_px": [
+        384,
+        318
+      ],
+      "badge_normalized": [
+        0.265193,
+        0.292818
+      ],
+      "configuration_world_coordinates_mm": [
+        5180.0,
+        167.0,
+        -549.0
+      ]
+    },
+    {
+      "number": "06",
+      "label": "收放外筒上端点",
+      "target": ".template_nlg_retract.shoufangwaitong.MARKER_8a",
+      "relative_target": "shoufangwaitong.MARKER_8a",
+      "view": "side",
+      "point_px": [
+        685.14,
+        370.48
+      ],
+      "point_normalized": [
+        0.473163,
+        0.341142
+      ],
+      "badge_px": [
+        660,
+        305
+      ],
+      "badge_normalized": [
+        0.455801,
+        0.280847
+      ],
+      "configuration_world_coordinates_mm": [
+        5655.0,
+        167.0,
+        -541.0
+      ]
+    },
+    {
+      "number": "07",
+      "label": "活塞杆下端点",
+      "target": ".template_nlg_retract.huosaigan.MARKER_M",
+      "relative_target": "huosaigan.MARKER_M",
+      "view": "side",
+      "point_px": [
+        297.62,
+        895.46
+      ],
+      "point_normalized": [
+        0.205539,
+        0.824549
+      ],
+      "badge_px": [
+        201,
+        898
+      ],
+      "badge_normalized": [
+        0.138812,
+        0.826888
+      ],
+      "configuration_world_coordinates_mm": [
+        4938.0,
+        0.0,
+        -1757.0
+      ]
+    },
+    {
+      "number": "08",
+      "label": "外筒上端点",
+      "target": ".template_nlg_retract.waitong.MARKER_OL",
+      "relative_target": "waitong.MARKER_OL",
+      "view": "side",
+      "point_px": [
+        288.16,
+        324.26
+      ],
+      "point_normalized": [
+        0.199006,
+        0.298582
+      ],
+      "badge_px": [
+        193,
+        312
+      ],
+      "badge_normalized": [
+        0.133287,
+        0.287293
+      ],
+      "configuration_world_coordinates_mm": [
+        4938.0,
+        0.0,
+        -412.0
+      ]
+    },
+    {
+      "number": "09",
+      "label": "转轴左端点",
+      "target": ".template_nlg_retract.zhuanzhou.MARKER_B",
+      "relative_target": "zhuanzhou.MARKER_B",
+      "view": "transverse",
+      "point_px": [
+        1013.46,
+        369.82
+      ],
+      "point_normalized": [
+        0.699903,
+        0.340534
+      ],
+      "badge_px": [
+        973,
+        318
+      ],
+      "badge_normalized": [
+        0.671961,
+        0.292818
+      ],
+      "configuration_world_coordinates_mm": [
+        5047.0,
+        -282.0,
+        -412.0
+      ]
+    },
+    {
+      "number": "10",
+      "label": "转轴右端点",
+      "target": ".template_nlg_retract.zhuanzhou.MARKER_A",
+      "relative_target": "zhuanzhou.MARKER_A",
+      "view": "transverse",
+      "point_px": [
+        1334.28,
+        369.91
+      ],
+      "point_normalized": [
+        0.921464,
+        0.340617
+      ],
+      "badge_px": [
+        1371,
+        317
+      ],
+      "badge_normalized": [
+        0.946823,
+        0.291897
+      ],
+      "configuration_world_coordinates_mm": [
+        5047.0,
+        282.0,
+        -412.0
+      ]
+    },
+    {
+      "number": "11",
+      "label": "上扭力臂端点",
+      "target": ".template_nlg_retract.shangniulibi.MARKER_70",
+      "relative_target": "shangniulibi.MARKER_70",
+      "view": "side",
+      "point_px": [
+        343.74,
+        675.2
+      ],
+      "point_normalized": [
+        0.23739,
+        0.621731
+      ],
+      "badge_px": [
+        409,
+        649
+      ],
+      "badge_normalized": [
+        0.282459,
+        0.597606
+      ],
+      "configuration_world_coordinates_mm": [
+        5147.0,
+        0.0,
+        -1257.0
+      ]
+    },
+    {
+      "number": "12",
+      "label": "上下扭力臂连接点",
+      "target": ".template_nlg_retract.shangniulibi.MARKER_74",
+      "relative_target": "shangniulibi.MARKER_74",
+      "view": "side",
+      "point_px": [
+        452.36,
+        761.96
+      ],
+      "point_normalized": [
+        0.312403,
+        0.701621
+      ],
+      "badge_px": [
+        519,
+        728
+      ],
+      "badge_normalized": [
+        0.358425,
+        0.67035
+      ],
+      "configuration_world_coordinates_mm": [
+        5347.0,
+        0.0,
+        -1507.0
+      ]
+    },
+    {
+      "number": "13",
+      "label": "下扭力臂端点",
+      "target": ".template_nlg_retract.xianiulibi.MARKER_77",
+      "relative_target": "xianiulibi.MARKER_77",
+      "view": "side",
+      "point_px": [
+        360.85,
+        871.11
+      ],
+      "point_normalized": [
+        0.249206,
+        0.802127
+      ],
+      "badge_px": [
+        459,
+        856
+      ],
+      "badge_normalized": [
+        0.316989,
+        0.788214
+      ],
+      "configuration_world_coordinates_mm": [
+        5097.0,
+        0.0,
+        -1757.0
+      ]
+    },
+    {
+      "number": "14",
+      "label": "前起质量点",
+      "target": ".template_nlg_retract.qianqizhiliang.MARKER_85",
+      "relative_target": "qianqizhiliang.MARKER_85",
+      "view": "side",
+      "point_px": [
+        294.8,
+        172.31
+      ],
+      "point_normalized": [
+        0.203591,
+        0.158665
+      ],
+      "badge_px": [
+        429,
+        152
+      ],
+      "badge_normalized": [
+        0.296271,
+        0.139963
+      ],
+      "configuration_world_coordinates_mm": [
+        4938.0,
+        0.0,
+        -57.0
+      ]
+    }
+  ]
+}

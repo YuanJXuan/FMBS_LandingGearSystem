@@ -23,6 +23,8 @@ except ImportError:
 
 @unittest.skipUnless(QT_AVAILABLE, "PySide2 is not installed")
 class MarkerSchematicQtTests(unittest.TestCase):
+    case_model = "template_nlg_drop"
+
     @classmethod
     def setUpClass(cls):
         cls.app = QApplication.instance() or QApplication([])
@@ -41,14 +43,14 @@ class MarkerSchematicQtTests(unittest.TestCase):
             def refreshPostprocessingConfiguration(self, clear_curve=False):
                 pass
         self.nodes = {}
-        scene = types.SimpleNamespace(Name="template_nlg_drop", getObject=lambda path: self.nodes.get(path))
-        self.scene_patch = patch.object(module.SelectionMonitor, "get_active_scene", return_value=scene)
+        self.scene = types.SimpleNamespace(Name=self.case_model, getObject=lambda path: self.nodes.get(path))
+        self.scene_patch = patch.object(module.SelectionMonitor, "get_active_scene", return_value=self.scene)
         self.scene_patch.start()
         self.addCleanup(self.scene_patch.stop)
         with patch.object(module.SelectionMonitor.SelectionMonitor, "start"), patch.object(
             module.StructuralParameterization, "available_parameters", return_value=([], [])
         ):
-            self.dialog = PreviewDialog({"model_dir": str(ROOT / "Model/template_nlg_drop")})
+            self.dialog = PreviewDialog({"model_dir": str(ROOT / "Model" / self.case_model)})
             for entry in self.dialog.informationConfiguration["markers"]:
                 self.nodes[entry["target"]] = object()
             self.dialog.refreshMarkerList()
@@ -113,13 +115,38 @@ class MarkerSchematicQtTests(unittest.TestCase):
 
     def test_switching_case_clears_sidebar_and_enlarged_view(self):
         self.dialog.markerSchematicPanel.open_enlarged()
-        self.dialog.currentModelDir = str(ROOT / "Model/template_nlg_retract")
+        self.dialog.currentModelDir = str(ROOT / "Model/template_nlg_turn")
         self.dialog._refreshMarkerSchematic()
         self.assertIsNone(self.dialog.schematicData)
         self.assertTrue(self.dialog.markerSchematicPanel.isHidden())
         self.assertTrue(self.dialog.schematicToggleButton.isHidden())
         self.assertFalse(self.dialog.markerSchematicPanel._large_dialog.isVisible())
         self.assertEqual([], self.dialog.markerSchematicPanel._large_view.markers)
+
+
+    def test_switching_supported_case_updates_image_title_and_live_targets(self):
+        self.dialog.markerSchematicPanel.open_enlarged()
+        next_model = "template_nlg_retract" if self.case_model == "template_nlg_drop" else "template_nlg_drop"
+        self.dialog.currentModelDir = str(ROOT / "Model" / next_model)
+        self.dialog._loadModelConfigurationData()
+        self.scene.Name = next_model
+        self.nodes.clear()
+        for entry in self.dialog.informationConfiguration["markers"]:
+            self.nodes[entry["target"]] = object()
+        with patch.object(self.module.StructuralParameterization, "available_parameters", return_value=([], [])):
+            self.dialog.refreshMarkerList()
+        self.dialog._selectSchematicMarker("02")
+        panel = self.dialog.markerSchematicPanel
+        title = MarkerSchematic.SCHEMATIC_MODELS[next_model]
+        self.assertEqual(title + "示意图", panel.titleLabel.text())
+        self.assertEqual(title + " · 示意图选点", panel._large_dialog.windowTitle())
+        self.assertEqual(next_model, self.dialog.schematicData["model"])
+        self.assertTrue(self.dialog.hpName.text().startswith("." + next_model + "."))
+        self.assertEqual("02", panel._large_view.selected)
+
+
+class RetractMarkerSchematicQtTests(MarkerSchematicQtTests):
+    case_model = "template_nlg_retract"
 
 
 if __name__ == "__main__":
