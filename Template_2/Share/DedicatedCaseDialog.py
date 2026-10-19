@@ -22,6 +22,7 @@ from PySide2.QtWidgets import (
     QMessageBox,
     QPushButton,
     QSizePolicy,
+    QSplitter,
     QTabWidget,
     QVBoxLayout,
     QWidget,
@@ -31,6 +32,8 @@ import DynamicModelParameters
 import FullModelGenerateDialog
 import InformationConfiguration
 import MarkerConfigurationTable
+import MarkerSchematic
+import MarkerSchematicWidget
 import ModelImportRunner
 import ModelMarkerParameters
 import RoadPosition
@@ -405,9 +408,24 @@ class DedicatedCaseDialog(QDialog):
         self.structureParameterInfo.setWordWrap(True)
         self.structureParameterInfo.setStyleSheet("color: #666666;")
         adjustment_layout.addWidget(self.structureParameterInfo, 2)
+        self.schematicToggleButton = QPushButton("隐藏示意图", tab)
+        self.schematicToggleButton.setCheckable(True)
+        self.schematicToggleButton.setChecked(True)
+        self.schematicToggleButton.setVisible(False)
+        self.schematicToggleButton.toggled.connect(self._toggleMarkerSchematic)
+        adjustment_layout.addWidget(self.schematicToggleButton)
         layout.addWidget(adjustment_panel)
 
-        panels = QHBoxLayout()
+        self.schematicData = None
+        self.structureSplitter = QSplitter(Qt.Horizontal, tab)
+        self.structureSplitter.setChildrenCollapsible(False)
+        self.structureSplitter.setHandleWidth(8)
+        self.markerSchematicPanel = MarkerSchematicWidget.MarkerSchematicPanel(tab)
+        self.markerSchematicPanel.markerRequested.connect(self._selectSchematicMarker)
+        self.markerSchematicPanel.hide()
+        parameter_panel = QWidget(tab)
+        panels = QHBoxLayout(parameter_panel)
+        panels.setContentsMargins(0, 0, 0, 0)
         panels.setSpacing(28)
         marker_panel = QFrame(tab)
         dimension_panel = QFrame(tab)
@@ -416,7 +434,12 @@ class DedicatedCaseDialog(QDialog):
             panel.setStyleSheet(panel_style)
             panel.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
             panels.addWidget(panel, 1)
-        layout.addLayout(panels, 1)
+        self.structureSplitter.addWidget(self.markerSchematicPanel)
+        self.structureSplitter.addWidget(parameter_panel)
+        self.structureSplitter.setStretchFactor(0, 0)
+        self.structureSplitter.setStretchFactor(1, 1)
+        self.structureSplitter.setSizes([360, 920])
+        layout.addWidget(self.structureSplitter, 1)
 
         marker_layout = QVBoxLayout(marker_panel)
         dimension_layout = QVBoxLayout(dimension_panel)
@@ -496,6 +519,66 @@ class DedicatedCaseDialog(QDialog):
         for button in (self.markOkButton, self.dimensionOkButton):
             button.setMinimumSize(180, 34)
         self.tabs.addTab(tab, "结构参数")
+
+    def _toggleMarkerSchematic(self, checked):
+        self.markerSchematicPanel.setVisible(bool(checked and self.schematicData))
+        self.schematicToggleButton.setText("隐藏示意图" if checked else "显示示意图")
+
+    def _refreshMarkerSchematic(self):
+        self.schematicData = None
+        try:
+            data = MarkerSchematic.load_schematic(self.currentModelDir)
+            if data is not None:
+                self.markerSchematicPanel.load(data)
+                self.schematicData = data
+        except (OSError, ValueError, TypeError, KeyError, AttributeError) as exc:
+            self.markerSchematicPanel.clear()
+            self.markerSchematicPanel.hide()
+            self.schematicToggleButton.setVisible(True)
+            self.schematicToggleButton.setEnabled(False)
+            self.schematicToggleButton.setText("示意图不可用")
+            self.schematicToggleButton.setToolTip(str(exc))
+            return
+        self.schematicToggleButton.setVisible(self.schematicData is not None)
+        self.schematicToggleButton.setEnabled(self.schematicData is not None)
+        self.schematicToggleButton.setToolTip("")
+        if self.schematicData is None:
+            self.markerSchematicPanel.clear()
+        self._toggleMarkerSchematic(self.schematicToggleButton.isChecked())
+        self._syncMarkerSchematic()
+
+    def _syncMarkerSchematic(self):
+        if self.schematicData is None:
+            return
+        markers = MarkerSchematic.match_markers(self.schematicData["markers"], self.markerItems)
+        index = self.hpSelector.currentIndex()
+        selected = next((m["number"] for m in markers if m["index"] == index and index > 0), "")
+        self.markerSchematicPanel.set_markers(markers, selected, not self.hpSelector.isEnabled())
+
+    def _selectSchematicMarker(self, number):
+        if self.schematicData is None:
+            return
+        markers = MarkerSchematic.match_markers(self.schematicData["markers"], self.markerItems)
+        marker = next((m for m in markers if m["number"] == number), None)
+        if marker is None or not marker["available"] or not self.hpSelector.isEnabled():
+            return
+        index = marker["index"]
+        # Check the live model again, so a stale diagram never selects a removed node.
+        item = self.markerItems[index - 1]
+        target = item["configuration_entry"]["target"]
+        path, node = StructuralParameterization.resolve_object(
+            SelectionMonitor.get_active_scene(), target,
+        )
+        item.update(path=path, node=node)
+        if node is None:
+            self.hpStatusLabel.setText("当前模型中未找到该Marker，请刷新Marker列表")
+            self._syncMarkerSchematic()
+            return
+        # Clicking the selected point leaves any unsubmitted coordinate edits intact.
+        if self.hpSelector.currentIndex() != index:
+            self.hpSelector.setCurrentIndex(index)
+        else:
+            self._syncMarkerSchematic()
 
     def _build_information_structure_tab(self):
         tab = QWidget(self)
@@ -1364,6 +1447,7 @@ class DedicatedCaseDialog(QDialog):
                 editor.setEnabled(False)
             self.markOkButton.setEnabled(False)
         self.refreshStructureParameterList()
+        self._refreshMarkerSchematic()
 
     def _selectedStructureParameter(self):
         index = self.structureParameterSelector.currentIndex()
@@ -1434,6 +1518,7 @@ class DedicatedCaseDialog(QDialog):
             marker_index = self.hpSelector.currentIndex()
             if marker_index > 0:
                 self.markerSelectorChanged(marker_index)
+            self._syncMarkerSchematic()
             return
 
         scene = SelectionMonitor.get_active_scene()
@@ -1450,6 +1535,7 @@ class DedicatedCaseDialog(QDialog):
                 "结构参数主控Marker未出现在可编辑列表：{}".format(target_path)
             )
             self.structureParameterInfo.setStyleSheet("color: #b00020;")
+            self._syncMarkerSchematic()
             return
 
         self.hpSelector.blockSignals(True)
@@ -1469,6 +1555,13 @@ class DedicatedCaseDialog(QDialog):
 
     def markerSelectorChanged(self, index):
         if index <= 0 or index > len(self.markerItems):
+            self.strSelFullName = ""
+            for editor in (self.hpName, self.xMarker, self.yMarker, self.zMarker):
+                editor.clear()
+            for editor in (self.xMarker, self.yMarker, self.zMarker):
+                editor.setEnabled(False)
+            self.markOkButton.setEnabled(False)
+            self._syncMarkerSchematic()
             return
         self.tabs.setCurrentIndex(0)
         scene = SelectionMonitor.get_active_scene()
@@ -1521,6 +1614,7 @@ class DedicatedCaseDialog(QDialog):
         self.hpStatusLabel.setStyleSheet(
             "color: #666666;" if available else "color: #b05a00;"
         )
+        self._syncMarkerSchematic()
 
     def selectionSlot(self, node_name):
         node = SelectionMonitor.get_active_node(node_name)
@@ -1879,8 +1973,10 @@ class DedicatedCaseDialog(QDialog):
 
     def closeEvent(self, event):
         self.selectionMonitor.stop()
+        self.markerSchematicPanel.close_enlarged()
         super(DedicatedCaseDialog, self).closeEvent(event)
 
     def okClickButton(self):
         self.selectionMonitor.stop()
+        self.markerSchematicPanel.close_enlarged()
         self.accept()

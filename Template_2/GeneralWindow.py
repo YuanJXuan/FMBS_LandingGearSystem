@@ -18,6 +18,8 @@ _CASE_MODULE_NAMES = (
     "FullModelGenerator",
     "InformationConfiguration",
     "MarkerConfigurationTable",
+    "MarkerSchematic",
+    "MarkerSchematicWidget",
     "MarkerCoordinateSystem",
     "ModelImportRunner",
     "ModelMarkerParameters",

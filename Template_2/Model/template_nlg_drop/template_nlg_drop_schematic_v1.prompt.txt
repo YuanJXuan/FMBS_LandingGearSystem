@@ -1,0 +1,28 @@
+Use case: scientific-educational engineering schematic.
+Create a polished, legible PNG diagram for the Chinese FMBS application's template_nlg_drop nose-landing-gear parameter selector. Landscape aspect ratio 4:3, preferably 1600 x 1200. White background, clean navy blue outlines, pale steel-blue mechanical housings, restrained light gray shading, circular blue numbered marker callouts. This is an explanatory engineering schematic of an existing model, not an invented photoreal aircraft. No perspective flourish, no watermark, no toolbar, no gradients in the background.
+Title at upper left: "前起落震 · 结构点位示意". Small subtitle: "template_nlg_drop". At bottom small note: "点位编号对应信息配置表 · 示意图非尺寸图".
+Use TWO neatly separated orthographic views: a larger X–Z side schematic in the left 64% of the canvas, and a narrower Y–Z transverse schematic in the right 32%. Headings: "侧向结构" and "横向点位". Leave comfortable whitespace. Both views upright: upper mass/support at top, wheels at bottom. Keep BOTH wheels in transverse view distinct.
+IMPORTANT mechanical connectivity and marker position instructions:
+LEFT view depicts a vertical telescopic oleo shock strut, diagonal telescopic dragbrace actuator, nearly horizontal retract actuator near the top, and a two-link torque-scissor on the right of the lower strut. Use simple visible joints, blue outlines and pale fills, avoiding realistic clutter. Side view wheel may be shown as a very pale dashed circle behind the lower axle so it does not obscure joints.
+The following coordinates are design guide anchor locations within a 1600x1200 canvas (scale proportionally if rendering a different resolution). Draw ten small precise anchor dots at these locations, with short leader lines to numbered white badges placed in surrounding whitespace. Exactly these numbers in left view, each once:
+14 at (205,190): top lumped nose mass reference, indicated with a compact light-gray rectangular mass.
+08 at (205,350): upper endpoint of the main outer strut cylinder.
+07 at (205,955): bottom endpoint of the main piston rod, central axle attachment.
+03 at (333,616): lower end of diagonal dragbrace piston rod, attached to an offset bracket on main upper strut.
+04 at (915,391): upper end of diagonal dragbrace cylinder, a grounded mounting at upper right. The single telescopic dragbrace connects 04 straight to 03.
+05 at (350,411): inner/lower end of retract piston rod, on an upper strut bracket.
+06 at (635,408): outer/upper end of retract cylinder. The single telescopic retract actuator connects 05 straight to 06, almost horizontal, distinct from diagonal dragbrace.
+11 at (330,730): top torque-scissor attachment offset right of main strut.
+12 at (450,842): scissor elbow farther right.
+13 at (300,955): lower torque-scissor attachment on an axle/lower-rod bracket. Two straight links connect 11–12–13, never connect 12 to a third scissor link.
+The main strut runs vertically 08–07. Show outer tube above and exposed piston below, with visible sleeve/collar. The upper mass 14 is connected to the upper mounting structure. Use light dashed construction guides where appropriate; never add new labeled nodes.
+
+RIGHT view is a simplified transverse outline of the same vertical strut with a horizontal top trunnion shaft and horizontal lower wheel axle, plus TWO wheels, separated on each side.
+Only four numbered anchor dots in this view, each once:
+09 at (1140,350): LEFT end of horizontal top trunnion shaft.
+10 at (1410,350): RIGHT end of top trunnion shaft.
+02 at (1130,955): center of LEFT wheel.
+01 at (1420,955): center of RIGHT wheel.
+The transverse center strut is at x=1275, extending from upper shaft to axle. Both wheel centers clearly accessible as visible blue dots on each wheel. Draw wheels as simplified narrow dark-gray rounded tire profiles with visible center marks.
+Do not reverse 01 and 02 or 09 and 10. This is the Y–Z schematic, with positive Y toward page right. Do not repeat 08, 07 or 14 on the right view.
+All 14 IDs 01 through 14 must appear EXACTLY ONCE in the entire drawing, each in its own circular callout associated unambiguously with its anchor dot. Badges must not obscure connections. Use only the numerical labels for points, NO long component names or dimensions or coordinates in the image. Keep diagram spacious and lines crisp, readable when reduced for a desktop application. Do not add any unlisted mechanisms, extra wheels, aircraft fuselage, dimensions, numbered axes or decorative icons.
