@@ -1,0 +1,12 @@
+Built-in imagegen, white background, PNG output.
+References: template_nlg_turn_schematic_v1.png and template_mlg_drop_schematic_v1.png.
+
+Combine the two reference engineering schematics into ONE clean 4:3 landscape landing-gear-only technical illustration for a software selection panel. Pure white background, navy Chinese text, silver/blue mechanical parts, detailed coherent linework matching both references. NO AIRPLANE, NO FUSELAGE, NO WINGS, NO OVERVIEW AIRCRAFT anywhere.
+
+Top title exact "前起与主起 · 结构示意". Layout three columns: left 42% width is reference 1 nose gear side view; middle 28% is reference 1 nose gear transverse view; right 30% is ONE main gear assembly from reference 2. Thin dashed dividers separate columns. Column headers exactly "前起侧向结构", "前起横向点位", "主起结构示意".
+
+Preserve all geometry and fourteen numbered blue point callouts on the NOSE gear, arranged clearly without overlaps: side view has numbers 03,04,05,06,07,08,11,12,13,14; transverse has 01,02,09,10. Every numbered point 01 through 14 appears exactly once in the image. Include blue leader lines from physical blue dots to white circular number badges. Ensure all number badges and dots remain visible and far enough apart to click. No invention or deletion of any numbered nose marker.
+
+In RIGHT column show full main gear mass block, outer cylinder, sliding piston, torque scissors and single wheel/axle as in reference 2, but REMOVE ALL its blue dots, blue leader lines and numbered badges; it is visual reference only, not clickable yet. No additional numbers on main gear. Do not crop wheel or strut. Place text "结构展示 · 点位待配置" under the main gear.
+
+Footer exact Chinese "示意图非尺寸图 · 点击前起编号选择 Marker". Enough whitespace for technical clarity, full height gear views, no models IDs. This image will replace an unwanted aircraft-overview sheet; only the nose and main landing gear must be shown.

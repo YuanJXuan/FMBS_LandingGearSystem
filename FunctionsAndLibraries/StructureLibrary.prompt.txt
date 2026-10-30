@@ -1,0 +1,12 @@
+Generator: built-in image_gen (transparent_background=true)
+Purpose: StructureLibrary toolbar icon / 结构模型库
+Asset: StructureLibrary.png
+Style basis: existing blue outline PNG icons in FunctionsAndLibraries.
+
+Use case: logo-brand.
+Asset type: a single PNG toolbar icon for an engineering desktop application, named StructureLibrary, meaning 结构模型库 (structural model library).
+Primary request: Create a clean, instantly recognizable structural-model-library symbol. Show three overlapping, slightly offset square model cards as one compact library stack. The front card contains one large simple isometric structural cube/truss, with round node joints and a few diagonal braces. The visible rims of the two rear cards communicate a collection of reusable models. Keep it exceptionally legible at small toolbar sizes.
+Style: crisp flat blue outline icon, consistent with a mechanical engineering software icon set. One medium engineering blue approximately #1674B8 for every visible stroke. Medium-bold uniform strokes, rounded corners and line ends, balanced negative space, no gradients, no shading, no texture, no shadows. Minimal geometry and large central motif.
+Composition: square canvas, centered symbol filling about 85 percent of the width and height with comfortable transparent margins. Standalone icon only, no surrounding UI or mockup.
+Background: truly transparent alpha throughout the background and open interiors, no white card fill, no colored tile, no checkerboard drawn into the image.
+Text: none. No letters, numbers, captions, watermarks, logos, or decorative sparkles. PNG output; square, ideally 250 by 250 pixels for the toolbar if supported.

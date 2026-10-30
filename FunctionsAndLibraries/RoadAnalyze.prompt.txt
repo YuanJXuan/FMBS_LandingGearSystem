@@ -1,0 +1,11 @@
+Generator: built-in image_gen (transparent_background=true)
+Asset: RoadAnalyze.png
+Edit target: original RoadAnalyze.png
+Style references: CMDContertor.png, Xunisim.png, StructureLibrary.png
+
+Use case: style-transfer.
+Asset: RoadAnalyze.png, a toolbar icon meaning 路面算法 / road profile and tire-load analysis for engineering simulation software.
+Input roles: Image 1 (RoadAnalyze) is the edit target and semantic reference. Images 2, 3, and 4 (CMDContertor, Xunisim, StructureLibrary) are style references only; do not alter or reproduce those icons.
+Redesign Image 1 into a simplified icon that belongs to the same family as the other three: uniform medium-bold engineering-blue outline strokes, rounded line ends, clean geometry, generous negative space, completely transparent background and interiors. Use one consistent blue close to #0875B8, matching the style reference images. Remove the original black dotted connecting orbit, database cylinder, lettering and tiny auxiliary symbols.
+Composition: one large side-view tire/wheel with a circular outer rim and a simple hub, positioned above a gently uneven road-profile line in the lower third. Make the tire meet the road convincingly at its bottom. A compact waveform plot in the upper right conveys analysis; use very simple L-shaped axes and a blue wave with two or three smooth peaks, no labels or tick marks. Integrate these elements as ONE balanced compact toolbar symbol, not separate icons. The wheel and road must dominate, the plot is secondary. No full aircraft, no gears, no folders, no stacked cards.
+Rendering: flat solid-color blue strokes only, no gradients, no shadows, no texture, no black or white marks, no filled background panel. All empty areas including inside the wheel must have actual transparent alpha. No text, numbers, captions, watermarks, or checkerboard pattern. Square PNG, consistent stroke weight with the three style references, clean smooth edges, centered content occupying roughly 82–86% of the canvas with safe margins. Readable when displayed at 32–64 px. Deliver only the final RoadAnalyze icon.

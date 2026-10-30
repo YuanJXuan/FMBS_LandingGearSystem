@@ -1,0 +1,207 @@
+{
+  "version": 1,
+  "model": "template_mlg_drop",
+  "image": "template_mlg_drop_schematic_v1.png",
+  "image_size": [
+    1448,
+    1086
+  ],
+  "coordinate_origin": "top_left",
+  "status": "connected_to_structure_tab",
+  "markers": [
+    {
+      "number": "01",
+      "label": "外筒上安装点",
+      "target": ".template_mlg_drop.waitong.MARKER_7",
+      "relative_target": "waitong.MARKER_7",
+      "point_px": [
+        599,
+        215
+      ],
+      "badge_px": [
+        336,
+        233
+      ],
+      "point_normalized": [
+        0.413674,
+        0.197974
+      ],
+      "badge_normalized": [
+        0.232044,
+        0.214549
+      ],
+      "configuration_world_coordinates_mm": [
+        9874.0,
+        1037.0,
+        -37.0
+      ]
+    },
+    {
+      "number": "02",
+      "label": "活塞杆下端及轮轴连接点",
+      "target": ".template_mlg_drop.huosai.MARKER_25",
+      "relative_target": "huosai.MARKER_25",
+      "point_px": [
+        598,
+        831
+      ],
+      "badge_px": [
+        356,
+        822
+      ],
+      "point_normalized": [
+        0.412983,
+        0.765193
+      ],
+      "badge_normalized": [
+        0.245856,
+        0.756906
+      ],
+      "configuration_world_coordinates_mm": [
+        9874.0,
+        1121.0,
+        -1643.0
+      ]
+    },
+    {
+      "number": "03",
+      "label": "轮心位置",
+      "target": ".template_mlg_drop.lunzhou.MARKER_71",
+      "relative_target": "lunzhou.MARKER_71",
+      "point_px": [
+        906,
+        845
+      ],
+      "badge_px": [
+        1163,
+        885
+      ],
+      "point_normalized": [
+        0.625691,
+        0.778085
+      ],
+      "badge_normalized": [
+        0.803177,
+        0.814917
+      ],
+      "configuration_world_coordinates_mm": [
+        9872.0,
+        1375.0,
+        -1649.0
+      ]
+    },
+    {
+      "number": "04",
+      "label": "上扭力臂安装点",
+      "target": ".template_mlg_drop.waitong.MARKER_56",
+      "relative_target": "waitong.MARKER_56",
+      "point_px": [
+        672,
+        440
+      ],
+      "badge_px": [
+        948,
+        400
+      ],
+      "point_normalized": [
+        0.464088,
+        0.405157
+      ],
+      "badge_normalized": [
+        0.654696,
+        0.368324
+      ],
+      "configuration_world_coordinates_mm": [
+        9997.0,
+        1018.0,
+        -1023.0
+      ]
+    },
+    {
+      "number": "05",
+      "label": "上下扭力臂中间铰点",
+      "target": ".template_mlg_drop.shang.MARKER_23",
+      "relative_target": "shang.MARKER_23",
+      "point_px": [
+        830,
+        551
+      ],
+      "badge_px": [
+        1098,
+        526
+      ],
+      "point_normalized": [
+        0.573204,
+        0.507366
+      ],
+      "badge_normalized": [
+        0.758287,
+        0.484346
+      ],
+      "configuration_world_coordinates_mm": [
+        10100.0,
+        973.0,
+        -1327.0
+      ]
+    },
+    {
+      "number": "06",
+      "label": "下扭力臂安装点",
+      "target": ".template_mlg_drop.huosai.MARKER_54",
+      "relative_target": "huosai.MARKER_54",
+      "point_px": [
+        662,
+        706
+      ],
+      "badge_px": [
+        982,
+        633
+      ],
+      "point_normalized": [
+        0.457182,
+        0.650092
+      ],
+      "badge_normalized": [
+        0.678177,
+        0.582873
+      ],
+      "configuration_world_coordinates_mm": [
+        9968.0,
+        1066.0,
+        -1633.0
+      ]
+    },
+    {
+      "number": "07",
+      "label": "主起质量点",
+      "target": ".template_mlg_drop.diaolan.MARKER_27",
+      "relative_target": "diaolan.MARKER_27",
+      "point_px": [
+        600,
+        120
+      ],
+      "badge_px": [
+        910,
+        108
+      ],
+      "point_normalized": [
+        0.414365,
+        0.110497
+      ],
+      "badge_normalized": [
+        0.628453,
+        0.099448
+      ],
+      "configuration_world_coordinates_mm": [
+        9874.0,
+        1037.0,
+        -37.0
+      ]
+    }
+  ],
+  "notes": [
+    "Static illustration, not a geometric projection or animated pose.",
+    "Match complete part/Marker paths from the active information workbook, not row order.",
+    "01 and 07 share model coordinates; distinct illustration anchors make both selectable."
+  ]
+}

@@ -1,0 +1,7 @@
+GeneralWindow,通用界面
+template_nlg_drop,前起落震
+template_nlg_retract,前起收放
+template_nlg_turn,前起转弯
+template_mlg_drop,主起落震
+template_full_drop,全机落震
+template_full_brake,全机刹车

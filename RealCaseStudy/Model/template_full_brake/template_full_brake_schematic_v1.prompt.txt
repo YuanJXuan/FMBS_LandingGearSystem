@@ -1,0 +1,5 @@
+Generator: built-in imagegen; white background; PNG.
+Reference for NLG: template_nlg_drop_schematic_v1.png.
+Hotspot coordinates were calibrated against the final image, not the approximate prompt positions.
+
+Edit this engineering schematic to be a GENERIC nose landing gear selectable marker diagram. Keep the entire geometry, all 14 dot and numbered callout positions and numbers exactly as reference, keep layout and 4:3 aspect ratio, blue grey mechanical illustration on white. ONLY replace the top title with Chinese '前起结构点位示意', remove the italic model identifier template_nlg_drop entirely. Preserve footer. Output one image. This is used for several models sharing the same configuration point layout, no model specific wording.
